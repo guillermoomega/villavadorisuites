@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villa Vadori Suites — Falda del Carmen, Córdoba</title>
+  <meta name="description" content="Complejo exclusivo para adultos en Falda del Carmen, Córdoba. 8 suites rodeadas de naturaleza serrana, gastronomía premiada y a solo 30 minutos de Córdoba Capital.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Villa Vadori Suites — Falda del Carmen, Córdoba">
+  <meta property="og:description" content="Complejo exclusivo para adultos. 8 unidades, gastronomía premiada y naturaleza serrana a 30 minutos de Córdoba Capital.">
+  <meta property="og:url" content="https://villavadorisuites.ar">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Villa Vadori Suites">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* ===== VARIABLES ===== */
+    :root {
+      --gris:        #4B5563;
+ç
+ç
+
+
+--borravino-d: #55202d;
+      --crudo:       #E0D9CC;
+      --beige:       #D4C5A9;
+      --oxido:       #B5541E;
+      --suave:       #F5F0E8;
+    }
+
+    /* ===== BASE ===== */
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--gris);
+      background: var(--beige);
+      line-height: 1.75;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
+    h1 { font-size: clamp(2.6rem, 6vw, 5rem); }
+    h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
+    h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); }
+
+    p { margin-bottom: 1rem; font-size: 1.05rem; }
+    p:last-child { margin-bottom: 0; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section { padding: 5rem 0; }
+
+    /* Section divider */
+    .divider {
+      width: 56px;
+      height: 3px;
+      background: var(--oxido);
+      margin: 1.25rem auto 0;
+    }
+    .divider--light { background: rgba(245,240,232,0.35); }
+
+    /* Section header block */
+    .sec-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .sec-header p {
+      max-width: 640px;
+      margin: 1.25rem auto 0;
+      color: #6b7280;
+      font-size: 1.1rem;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: 1rem 2.4rem;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background .2s, transform .2s, border-color .2s, color .2s;
+    }
+    .btn-primary {
+      background: var(--borravino);
+      color: var(--suave);
+    }
+    .btn-primary:hover { background: var(--borravino-d); transform: translateY(-2px); }
+
+    .btn-light {
+      background: var(--suave);
+      color: var(--borravino);
+    }
+    .btn-light:hover { background: #fff; transform: translateY(-2px); }
+
+    .btn-outline-light {
+      background: transparent;
+      color: var(--suave);
+      border: 2px solid rgba(245,240,232,.5);
+    }
+    .btn-outline-light:hover { border-color: var(--suave); background: rgba(245,240,232,.08); }
+
+    /* ===== NAVBAR ===== */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      transition: background .3s, box-shadow .3s, padding .3s;
+    }
+    #navbar.scrolled {
+      background: rgba(224,217,204,.97);
+      box-shadow: 0 2px 16px rgba(75,85,99,.12);
+      padding: .85rem 2rem;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-decoration: none;
+      color: var(--suave);
+      transition: color .3s;
+    }
+    #navbar.scrolled .nav-logo { color: var(--gris); }
+    .nav-cta {
+      padding: .55rem 1.3rem;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: .85rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: var(--borravino);
+      color: var(--suave);
+      border-radius: 3px;
+      transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--borravino-d); }
+
+    /* ===== HERO ===== */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('la cuarteria.png') center center / cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(20,14,10,.35) 0%,
+        rgba(20,14,10,.55) 70%,
+        rgba(20,14,10,.7) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 1.5rem;
+      color: var(--suave);
+    }
+    .hero-tag {
+      font-size: .8rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      opacity: .75;
+      margin-bottom: 1.1rem;
+    }
+    .hero-content h1 {
+      color: var(--suave);
+      text-shadow: 0 2px 24px rgba(0,0,0,.3);
+      margin-bottom: .9rem;
+    }
+    .hero-logo {
+      max-width: min(380px, 72vw);
+      display: block;
+      margin-bottom: 1.4rem;
+      filter: brightness(0) invert(1);
+    }
+    .nav-logo-img {
+      height: 36px;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+      transition: filter .3s;
+    }
+    #navbar.scrolled .nav-logo-img {
+      filter: none;
+    }
+    .footer-logo {
+      height: 52px;
+      width: auto;
+      display: block;
+      margin: 0 auto 1.5rem;
+      filter: brightness(0) invert(1);
+    }
+    .hero-sub {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      opacity: .88;
+      margin-bottom: 2.5rem;
+    }
+    .hero-arrow {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--suave);
+      opacity: .5;
+      font-size: 1.6rem;
+      animation: bob 2.2s ease-in-out infinite;
+      z-index: 2;
+      text-decoration: none;
+    }
+    @keyframes bob {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(9px); }
+    }
+
+    /* ===== INTRO ===== */
+    #intro { background: var(--beige); }
+    #intro .inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #intro h2 { color: var(--oxido); margin-bottom: .75rem; }
+    #intro p { color: #5a6070; font-size: 1.1rem; }
+
+    /* ===== UNIDADES ===== */
+    #unidades { background: var(--beige); }
+
+    .unit-block {
+      display: grid;
+      grid-template-columns: 54% 1fr;
+      gap: 3rem;
+      align-items: start;
+      padding: 3.5rem 0;
+      border-bottom: 1px solid rgba(75,85,99,.1);
+    }
+    .unit-block:last-child { border-bottom: none; padding-bottom: 0; }
+    .unit-block:nth-child(even) .unit-carousel { order: 2; }
+    .unit-block:nth-child(even) .unit-info    { order: 1; }
+
+    /* Carousel */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      aspect-ratio: 4/3;
+      background: #a08060;
+      user-select: none;
+    }
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform .4s ease;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+    }
+    .carousel-slide img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+    .slide-ph {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .78rem; text-align: center; padding: 1rem;
+      color: rgba(255,255,255,.4);
+    }
+    .c-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,.82); border: none; border-radius: 50%;
+      width: 38px; height: 38px; font-size: 1.3rem; line-height: 1;
+      cursor: pointer; z-index: 3; transition: background .2s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c-btn:hover { background: white; }
+    .c-prev { left: .7rem; }
+    .c-next { right: .7rem; }
+    .c-dots {
+      position: absolute; bottom: .75rem; left: 50%; transform: translateX(-50%);
+      display: flex; gap: .45rem;
+    }
+    .c-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,.45); cursor: pointer; transition: background .2s;
+    }
+    .c-dot.active { background: white; }
+
+    /* Unit info */
+    .unit-info { padding-top: .25rem; }
+    .card-badge {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--oxido);
+      margin-bottom: .5rem;
+    }
+    .unit-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      color: var(--gris);
+      margin-bottom: .8rem;
+    }
+    .unit-info p { font-size: .95rem; color: #6b7280; line-height: 1.7; }
+
+    .features {
+      list-style: none;
+      border-top: 1px solid rgba(75,85,99,.15);
+      margin-top: 1.2rem;
+      padding-top: 1rem;
+    }
+    .features li {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .9rem;
+      color: #5a6070;
+      padding: .25rem 0;
+    }
+    .features li::before {
+      content: '—';
+      color: var(--oxido);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ===== GASTRONOMÍA ===== */
+    #gastronomia { background: var(--beige); }
+
+    .gastro-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    .gastro-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #8a6040 0%, #5c3818 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+    }
+    .gastro-img span { color: rgba(255,255,255,.35); font-size: .78rem; max-width: 220px; }
+
+    .gastro-text h3 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: var(--oxido);
+      margin-bottom: 1rem;
+    }
+    .gastro-text p { color: #5a6070; }
+
+    .incluye-label {
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: .78rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gris);
+      margin: 1.75rem 0 .9rem;
+    }
+    .incluye {
+      list-style: none;
+      border-top: 1px solid var(--beige);
+    }
+    .incluye li {
+      padding: .65rem 0;
+      border-bottom: 1px solid var(--beige);
+      font-size: .95rem;
+      color: #5a6070;
+    }
+    .gastro-nota {
+      font-size: .85rem !important;
+      font-style: italic;
+      color: #9ca3af !important;
+      margin-top: 1rem;
+    }
+
+    /* ===== PREDIO ===== */
+    #predio { background: var(--beige); }
+
+    .predio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .predio-card {
+      background: var(--suave);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(75,85,99,.09);
+    }
+    .predio-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+    }
+    .predio-img span { color: rgba(255,255,255,.35); font-size: .78rem; max-width: 200px; }
+    .predio-img--parque { background: linear-gradient(135deg, #7a9a5a 0%, #507038 100%); }
+    .predio-img--fogon  { background: linear-gradient(135deg, #6a6550 0%, #44402e 100%); }
+    .predio-img--asador { background: linear-gradient(135deg, #9a7848 0%, #6e5428 100%); }
+    .predio-img--entorno{ background: linear-gradient(135deg, #5a7848 0%, #3a5630 100%); }
+    .predio-body { padding: 1.5rem; }
+    .predio-body h3 { color: var(--gris); font-size: 1.35rem; margin-bottom: .6rem; }
+    .predio-body p  { font-size: .95rem; color: #6b7280; margin-bottom: 0; }
+
+    /* ===== COMO LLEGAR ===== */
+    #llegar {
+      background: var(--gris);
+      color: var(--suave);
+    }
+    #llegar h2 { color: var(--suave); }
+    #llegar .sec-header p { color: rgba(245,240,232,.7); }
+
+    .llegar-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .distancias { list-style: none; margin: .5rem 0 2rem; }
+    .distancias li {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(245,240,232,.12);
+      font-size: 1.05rem;
+      color: var(--suave);
+    }
+    .distancias li:last-child { border-bottom: none; }
+    .distancias .ico { font-size: 1.4rem; flex-shrink: 0; }
+
+    .mapa-wrap {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 6px 28px rgba(0,0,0,.35);
+    }
+    .mapa-wrap iframe { display: block; width: 100%; height: 360px; border: 0; }
+
+    /* ===== CIERRE ===== */
+    #cierre {
+      background: var(--borravino);
+      text-align: center;
+      padding: 6rem 0;
+    }
+    #cierre h2 {
+      color: var(--suave);
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      margin-bottom: 1.5rem;
+    }
+    #cierre > .container > p {
+      color: rgba(245,240,232,.83);
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.08rem;
+    }
+    .cierre-tag {
+      font-weight: 700;
+      font-size: .78rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,.5);
+      margin-top: .5rem;
+    }
+    .cierre-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #211d18;
+      color: rgba(245,240,232,.55);
+      padding: 3rem 0 2rem;
+      text-align: center;
+    }
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      color: var(--suave);
+      margin-bottom: 1.5rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .footer-links a {
+      color: rgba(245,240,232,.55);
+      text-decoration: none;
+      font-size: .95rem;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--suave); }
+    .footer-sep {
+      width: 40px;
+      height: 1px;
+      background: rgba(245,240,232,.15);
+      margin: 1.5rem auto;
+    }
+    .footer-copy { font-size: .82rem; color: rgba(245,240,232,.28); }
+
+    /* ===== WA FLOAT ===== */
+    .wa-btn {
+      position: fixed;
+      bottom: 1.8rem;
+      right: 1.8rem;
+      z-index: 999;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.45);
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .wa-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37,211,102,.55);
+    }
+    .wa-btn svg { width: 30px; height: 30px; fill: #fff; }
+
+    /* ===== FADE IN ===== */
+    .fade {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .fade.in { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .gastro-layout { grid-template-columns: 1fr; }
+      .llegar-layout { grid-template-columns: 1fr; }
+      .unit-block { grid-template-columns: 1fr; }
+      .unit-block:nth-child(even) .unit-carousel { order: 0; }
+      .unit-block:nth-child(even) .unit-info    { order: 0; }
+    }
+    @media (max-width: 700px) {
+      section { padding: 3.5rem 0; }
+      .predio-grid { grid-template-columns: 1fr; }
+      .cierre-ctas { flex-direction: column; align-items: center; }
+      #navbar { padding: 1rem 1.25rem; }
+      #navbar.scrolled { padding: .75rem 1.25rem; }
+    }
+    @media (max-width: 480px) {
+      .wa-btn { width: 54px; height: 54px; bottom: 1.2rem; right: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo"><img src="Isologotipo_Villa_Vadori suites serranas negro fondo transparente.png" alt="Villa Vadori Suites Serranas" class="nav-logo-img"></a>
+  <a href="https://wa.me/5493516427600" target="_blank" rel="noopener" class="nav-cta">Reservar</a>
+</nav>
+
+<!-- ① HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-tag">Falda del Carmen &middot; Córdoba &middot; Argentina</p>
+    <img src="Isologotipo_Villa_Vadori suites serranas negro fondo transparente.png" alt="Villa Vadori Suites Serranas" class="hero-logo">
+    <p class="hero-sub">Donde el descanso se une con el placer</p>
+    <a href="https://wa.me/5493516427600" target="_blank" rel="noopener" class="btn btn-primary">Quiero reservar</a>
+  </div>
+  <a href="#intro" class="hero-arrow" aria-label="Bajar">↓</a>
+</section>
+
+<!-- ② INTRODUCCIÓN -->
+<section id="intro">
+  <div class="container">
+    <div class="inner fade">
+      <h2>Un lugar donde el tiempo se detiene</h2>
+      <div class="divider"></div>
+      <p style="margin-top:1.75rem;">En el corazón de los valles serranos cordobeses, a solo 30 minutos de Córdoba Capital, existe un lugar donde el tiempo se detiene.</p>
+      <p>Villa Vadori Suites es un complejo exclusivo para adultos de 8 unidades cuidadosamente diseñadas, rodeadas de monte nativo, silencio y un parque con arroyo y piscina que invitan a no hacer nada... o a hacerlo todo.</p>
+      <p>A pasos de Gran Vadori, restaurante de cocina criolla gourmet con 15 años de trayectoria premiada, cada estadía es una experiencia completa donde el descanso y la buena mesa se encuentran naturalmente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ③ UNIDADES -->
+<section id="unidades">
+  <div class="container">
+    <div class="sec-header fade">
+      <h2>Las unidades</h2>
+      <div class="divider"></div>
+      <p>Ocho unidades diseñadas para que no falte nada ni sobre nada. Cada espacio pensado para dos, con el confort justo y el entorno como protagonista.</p>
+    </div>
+    <!-- CUARTOS -->
+    <div class="unit-block fade">
+      <div class="unit-carousel">
+        <div class="carousel">
+          <div class="carousel-track">
+            <div class="carousel-slide"><div class="slide-ph" style="background:linear-gradient(135deg,#c4b494,#a08060)">[ Foto 1 — Cuarto ]</div></div>
+            <div class="carousel-slide"><div class="slide-ph" style="background:linear-gradient(135deg,#bfab85,#9a7858)">[ Foto 2 — Cuarto ]</div></div>
+            <div class="carousel-slide"><div class="slide-ph" style="background:linear-gradient(135deg,#c8b080,#a08848)">[ Foto 3 — Baño privado ]</div></div>
+            <div class="carousel-slide"><div class="slide-ph" style="background:linear-gradient(135deg,#c0b48a,#907050)">[ Foto 4 — Terraza y arroyo ]</div></div>
+          </div>
+          <button class="c-btn c-prev">&#8249;</button>
+          <button class="c-btn c-next">&#8250;</button>
+          <div class="c-dots">
+            <span class="c-dot active"></span><span class="c-dot"></span><span class="c-dot"></span><span class="c-dot"></span>
+          </div>
+        </div>
+      </div>
+      <div class="unit-info">
+        <span class="card-badge">4 unidades &middot; 20 m²</span>
+        <h3>Cuartos</h3>
+        <p>Espacios de 20 m² con todo lo necesario para descansar de verdad. Baño privado y terraza exclusiva con vista al arroyo, donde el sonido del agua y el verde serrano son tu compañía permanente.</p>
+        <ul class="features">
+          <li>Baño privado</li>
+          <li>Terraza privada</li>
+          <li>Vista al arroyo</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SUITES INDEPENDIENTES -->
+    <div class="unit-block fade">
+      <div class="unit-carousel">
+        <div class="carousel">
+          <div class="carousel-track">
+            <div class="carousel-slide"><div class="slide-ph" style="background:linear-gradient(135deg,#b09070,#8a6845)">[ Foto 1 — Suite independiente ]</div></div>
+            <div class="carousel-slide"><div class="slide-ph" style="background:linear-gradient(135deg,#a88860,#846040)">[ Foto 2 — Interior ]</div></div>
+            <div class="carousel-slide"><div class="slide-ph" style="background:linear-gradient(135deg,#b89870,#906848)">[ Foto 3 — Kitchenette ]</div></div>
+            <div class="carousel-slide"><div class="slide-ph" style="background:linear-gradient(135deg,#ac8c68,#886244)">[ Foto 4 — Exterior ]</div></div>
+          </div>
+          <button class="c-btn c-prev">&#8249;</button>
+          <button class="c-btn c-next">&#8250;</button>
+          <div class="c-dots">
+            <span class="c-dot active"></span><span class="c-dot"></span><span class="c-dot"></span><span class="c-dot"></span>
+          </div>
+        </div>
+      </div>
+      <div class="unit-info">
+        <span class="card-badge">2 unidades &middot; 24 m²</span>
+        <h3>Suites Independientes</h3>
+        <p>Unidades completamente independientes con mayor privacidad y autonomía. Equipadas con microondas, bacha y frigobar para que la estadía sea exactamente como la imaginaste.</p>
+        <ul class="features">
+          <li>Unidad independiente</li>
+          <li>Microondas</li>
+          <li>Bacha</li>
+          <li>Frigobar</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SUITES CON HIDROMASAJE -->
+    <div class="unit-block fade">
+      <div class="unit-carousel">
+        <div class="carousel">
+          <div class="carousel-track">
+            <div class="carousel-slide"><div class="slide-ph" style="background:linear-gradient(135deg,#9a7858,#74563a)">[ Foto 1 — Suite con hidromasaje ]</div></div>
+            <div class="carousel-slide"><div class="slide-ph" style="background:linear-gradient(135deg,#927050,#6e5032)">[ Foto 2 — Hidromasaje privado ]</div></div>
+            <div class="carousel-slide"><div class="slide-ph" style="background:linear-gradient(135deg,#a07858,#7a5838)">[ Foto 3 — Interior ]</div></div>
+            <div class="carousel-slide"><div class="slide-ph" style="background:linear-gradient(135deg,#9c7a5c,#76583c)">[ Foto 4 — Exterior ]</div></div>
+          </div>
+          <button class="c-btn c-prev">&#8249;</button>
+          <button class="c-btn c-next">&#8250;</button>
+          <div class="c-dots">
+            <span class="c-dot active"></span><span class="c-dot"></span><span class="c-dot"></span><span class="c-dot"></span>
+          </div>
+        </div>
+      </div>
+      <div class="unit-info">
+        <span class="card-badge">2 unidades &middot; 24 m²</span>
+        <h3>Suites con Hidromasaje</h3>
+        <p>La experiencia completa. Las mismas suites independientes con el plus de un hidromasaje privado para dos. Porque hay escapadas que merecen un poco más.</p>
+        <ul class="features">
+          <li>Unidad independiente</li>
+          <li>Hidromasaje privado para dos</li>
+          <li>Microondas</li>
+          <li>Bacha</li>
+          <li>Frigobar</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ GASTRONOMÍA -->
+<section id="gastronomia">
+  <div class="container">
+    <div class="sec-header fade">
+      <h2>Gastronomía</h2>
+      <div class="divider"></div>
+      <p>En Villa Vadori Suites el placer de la mesa está a solo 80 metros.</p>
+    </div>
+    <div class="gastro-layout fade">
+      <div class="gastro-img">
+        <img src="colita macerada.jpg" alt="Colita macerada — Gran Vadori" style="width:100%;height:100%;object-fit:cover;border-radius:6px;display:block;">
+      </div>
+      <div class="gastro-text">
+        <h3>Gran Vadori</h3>
+        <p>Quince años de cocina criolla gourmet, ampliamente premiada, en el mismo predio. Gran Vadori no es el restaurante del complejo — es mucho más que eso. Es la razón por la que muchos vuelven.</p>
+        <p>Una cocina que respeta los sabores de la tierra cordobesa y los eleva con técnica y pasión. Abierto de jueves a domingo para el almuerzo, y los sábados a la noche para cena.</p>
+        <p class="incluye-label">Lo que incluye tu estadía</p>
+        <ul class="incluye">
+          <li>🍳 Desayuno en Gran Vadori — estadías de jueves a domingo</li>
+          <li>🧺 Canasta de desayuno en tu unidad — estadías de domingo a martes</li>
+          <li>🍽️ Almuerzo incluido — ingresos los miércoles o jueves</li>
+          <li>🥂 Un almuerzo o una cena incluidos — ingresos viernes o sábados</li>
+        </ul>
+        <p class="gastro-nota">Consultá disponibilidad y combiná tu estadía con la experiencia gastronómica que más te inspire.</p>
+        <div style="margin-top:2rem;">
+          <a href="https://wa.me/5493516427600" target="_blank" rel="noopener" class="btn btn-primary">Quiero reservar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ EL PREDIO -->
+<section id="predio">
+  <div class="container">
+    <div class="sec-header fade">
+      <h2>El predio</h2>
+      <div class="divider"></div>
+      <p>Más allá de tu unidad, Villa Vadori Suites te espera con espacios pensados para que la experiencia no termine al cerrar la puerta.</p>
+    </div>
+    <div class="predio-grid">
+
+      <div class="predio-card fade">
+        <div class="predio-img predio-img--parque">
+          <span>[ FOTO — Piscina tipo playa con arroyo y vegetación ]</span>
+        </div>
+        <div class="predio-body">
+          <h3>El parque</h3>
+          <p>Un parque central donde la naturaleza y el diseño conviven en armonía. Un arroyo artificial de 50 metros rodea una piscina tipo playa, creando un entorno único donde el agua, el verde y el silencio serrano se convierten en los protagonistas de tu descanso.</p>
+        </div>
+      </div>
+
+      <div class="predio-card fade">
+        <div class="predio-img predio-img--fogon">
+          <span>[ FOTO — Fogón social con bancos y monte nativo ]</span>
+        </div>
+        <div class="predio-body">
+          <h3>El fogón</h3>
+          <p>El fogón social es el lugar donde las conversaciones se alargan y el tiempo deja de importar. Rodeado de bancos y con el monte nativo como telón de fondo, es el espacio ideal para terminar el día como se merece.</p>
+        </div>
+      </div>
+
+      <div class="predio-card fade">
+        <div class="predio-img predio-img--asador">
+          <span>[ FOTO — Asadores exteriores grupales y para parejas ]</span>
+        </div>
+        <div class="predio-body">
+          <h3>Los asadores</h3>
+          <p>Para quienes prefieren el ritual del fuego en privado. Contamos con asadores grupales y para parejas, disponibles para que el asado sea parte de la experiencia serrana.</p>
+        </div>
+      </div>
+
+      <div class="predio-card fade">
+        <div class="predio-img predio-img--entorno">
+          <span>[ FOTO — Monte nativo, árboles y entorno natural del predio ]</span>
+        </div>
+        <div class="predio-body">
+          <h3>El entorno</h3>
+          <p>Los límites del predio están abrazados por monte nativo en estado puro. Sin ruidos, sin vecinos, sin distracciones. Solo el sonido de los pájaros, el viento entre los árboles y la paz que las sierras cordobesas saben dar como nadie.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ CÓMO LLEGAR -->
+<section id="llegar">
+  <div class="container">
+    <div class="sec-header fade">
+      <h2>Cómo llegar</h2>
+      <div class="divider divider--light"></div>
+      <p>Estamos en Falda del Carmen, en el corazón de los valles serranos cordobeses. Más cerca de lo que imaginás.</p>
+    </div>
+    <div class="llegar-layout fade">
+      <div>
+        <ul class="distancias">
+          <li><span class="ico">🚗</span><span><strong>30 minutos</strong> de Córdoba Capital</span></li>
+          <li><span class="ico">🚗</span><span><strong>20 minutos</strong> de Villa Carlos Paz</span></li>
+          <li><span class="ico">🚗</span><span><strong>40 minutos</strong> de Villa General Belgrano</span></li>
+        </ul>
+        <a href="https://maps.app.goo.gl/Kjf7zWqLZWPTw9Qo7" target="_blank" rel="noopener" class="btn btn-primary">Cómo llegar →</a>
+      </div>
+      <div class="mapa-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=Gran+Vadori+Falda+del+Carmen+Cordoba+Argentina&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación Villa Vadori Suites">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ CIERRE -->
+<section id="cierre">
+  <div class="container fade">
+    <h2>Ya lo imaginaste.<br>Ahora solo falta reservar.</h2>
+    <p>Villa Vadori Suites tiene solo 8 unidades. La exclusividad es parte de la experiencia, y la disponibilidad es limitada.</p>
+    <p>Escribinos y te ayudamos a armar la estadía perfecta para vos — los días, la unidad, la experiencia gastronómica. Todo a medida, con el trato de siempre.</p>
+    <p class="cierre-tag">Solo 8 unidades &middot; Exclusivo para adultos &middot; Falda del Carmen</p>
+    <div class="cierre-ctas">
+      <a href="https://wa.me/5493516427600" target="_blank" rel="noopener" class="btn btn-light">
+        <svg width="19" height="19" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/></svg>
+        Reservar por WhatsApp
+      </a>
+      <a href="https://instagram.com/villavadori.suites" target="_blank" rel="noopener" class="btn btn-outline-light">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @villavadori.suites
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-brand"><img src="Isologotipo_Villa_Vadori suites serranas negro fondo transparente.png" alt="Villa Vadori Suites Serranas" class="footer-logo"></div>
+    <div class="footer-links">
+      <a href="https://maps.app.goo.gl/Kjf7zWqLZWPTw9Qo7" target="_blank" rel="noopener">📍 Falda del Carmen, Córdoba, Argentina</a>
+      <a href="https://wa.me/5493516427600" target="_blank" rel="noopener">📱 +5493516427600</a>
+      <a href="https://instagram.com/villavadori.suites" target="_blank" rel="noopener">📷 @villavadori.suites</a>
+    </div>
+    <div class="footer-sep"></div>
+    <p class="footer-copy">© 2026 Villa Vadori Suites &middot; Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/5493516427600" target="_blank" rel="noopener" class="wa-btn" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  // Navbar scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Fade-in on scroll
+  const fades = document.querySelectorAll('.fade');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  fades.forEach((el, i) => {
+    el.style.transitionDelay = (el.closest('.predio-grid') ? (i % 3) * 0.1 : 0) + 's';
+    io.observe(el);
+  });
+
+  // Carousels
+  document.querySelectorAll('.carousel').forEach(car => {
+    const track = car.querySelector('.carousel-track');
+    const slides = car.querySelectorAll('.carousel-slide');
+    const dots = car.querySelectorAll('.c-dot');
+    let cur = 0;
+    const go = to => {
+      cur = (to + slides.length) % slides.length;
+      track.style.transform = `translateX(${-cur * 100}%)`;
+      dots.forEach((d, j) => d.classList.toggle('active', j === cur));
+    };
+    car.querySelector('.c-prev').addEventListener('click', () => go(cur - 1));
+    car.querySelector('.c-next').addEventListener('click', () => go(cur + 1));
+    dots.forEach((d, j) => d.addEventListener('click', () => go(j)));
+  });
+</script>
+
+</body>
+</html>
