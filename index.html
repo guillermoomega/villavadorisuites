@@ -604,6 +604,113 @@
     @media (max-width: 480px) {
       .wa-btn { width: 54px; height: 54px; bottom: 1.2rem; right: 1.2rem; }
     }
+
+    /* ===== GALERÍA ===== */
+    #galeria { background: var(--beige); padding-bottom: 0; }
+    #galeria .sec-header { margin-bottom: 2rem; }
+    .galeria-wrap { width: 100%; }
+    .galeria-wrap .carousel {
+      border-radius: 0;
+      aspect-ratio: unset;
+      height: 520px;
+    }
+
+    /* ===== TARIFAS ===== */
+    #tarifas { background: var(--suave); }
+    .tarifas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .tarifa-card {
+      background: var(--crudo);
+      border-radius: 6px;
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(75,85,99,.09);
+    }
+    .tarifa-tipo {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--oxido);
+      margin-bottom: .4rem;
+    }
+    .tarifa-card h3 { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--gris); margin-bottom: .9rem; }
+    .tarifa-precio {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      color: var(--borravino-d);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: .35rem;
+    }
+    .tarifa-detalle { font-size: .8rem; color: #9ca3af; line-height: 1.4; margin-bottom: 0; }
+    .tarifas-nota { text-align: center; font-size: .95rem; color: #6b7280; margin-bottom: 1.75rem; font-style: italic; }
+
+    /* ===== GRUPOS ===== */
+    #grupos { background: var(--beige); }
+    .grupos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .grupo-card {
+      background: var(--suave);
+      border-radius: 6px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 2px 12px rgba(75,85,99,.09);
+    }
+    .grupo-ico { font-size: 2.2rem; margin-bottom: .85rem; display: block; }
+    .grupo-card h3 { font-size: 1.15rem; color: var(--gris); margin-bottom: .6rem; }
+    .grupo-card p { font-size: .93rem; color: #6b7280; margin-bottom: 0; line-height: 1.65; }
+
+    /* ===== POLÍTICAS ===== */
+    #politicas { background: var(--gris); color: var(--suave); }
+    #politicas h2 { color: var(--suave); }
+    #politicas .sec-header p { color: rgba(245,240,232,.7); }
+    #politicas .divider { background: rgba(245,240,232,.35); }
+    .politicas-list { max-width: 700px; margin: 0 auto; list-style: none; }
+    .politica-item { border-bottom: 1px solid rgba(245,240,232,.12); }
+    .politica-item:first-child { border-top: 1px solid rgba(245,240,232,.12); }
+    .politica-btn {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+      color: var(--suave);
+      text-align: left;
+      gap: 1rem;
+    }
+    .pol-toggle {
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: transform .25s;
+      flex-shrink: 0;
+      color: var(--oxido);
+    }
+    .politica-item.open .pol-toggle { transform: rotate(45deg); }
+    .politica-body {
+      display: none;
+      padding: 0 0 1.1rem;
+      font-size: .95rem;
+      color: rgba(245,240,232,.75);
+      line-height: 1.6;
+    }
+    .politica-item.open .politica-body { display: block; }
+
+    /* ===== RESPONSIVE (nuevas secciones) ===== */
+    @media (max-width: 700px) {
+      .galeria-wrap .carousel { height: 300px; }
+    }
   </style>
 </head>
 <body>
@@ -640,6 +747,31 @@
   </div>
 </section>
 
+<!-- GALERÍA -->
+<section id="galeria">
+  <div class="container">
+    <div class="sec-header fade">
+      <h2>El lugar</h2>
+      <div class="divider"></div>
+    </div>
+  </div>
+  <div class="galeria-wrap fade">
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-slide"><img src="lago.jpg" alt="El parque — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="carousel-slide"><img src="fogon.jpg" alt="El fogón — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="carousel-slide"><img src="la cuarteria.png" alt="La cuartería — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="carousel-slide"><img src="portada.jpg" alt="Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      </div>
+      <button class="c-btn c-prev">&#8249;</button>
+      <button class="c-btn c-next">&#8250;</button>
+      <div class="c-dots">
+        <span class="c-dot active"></span><span class="c-dot"></span><span class="c-dot"></span><span class="c-dot"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ③ UNIDADES -->
 <section id="unidades">
   <div class="container">
@@ -653,7 +785,7 @@
       <div class="unit-carousel">
         <div class="carousel">
           <div class="carousel-track">
-            <div class="carousel-slide"><img src="cuarto 0.jpg" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div class="carousel-slide"><img src="cuarto.jpg" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
             <div class="carousel-slide"><img src="cuarto 1.jpg" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
             <div class="carousel-slide"><img src="cuarto 2.JPG" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
             <div class="carousel-slide"><img src="cuarto 3.jpg" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
@@ -710,6 +842,53 @@
           <li>Frigobar</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFAS -->
+<section id="tarifas">
+  <div class="container">
+    <div class="sec-header fade">
+      <h2>Tarifas</h2>
+      <div class="divider"></div>
+      <p>Precios por unidad para dos personas. Todos incluyen desayuno.</p>
+    </div>
+    <div class="tarifas-grid fade">
+      <div class="tarifa-card">
+        <p class="tarifa-tipo">Por noche</p>
+        <h3>Lunes a jueves</h3>
+        <p class="tarifa-precio">$90.000</p>
+      </div>
+      <div class="tarifa-card">
+        <p class="tarifa-tipo">Por noche</p>
+        <h3>Viernes o sábado</h3>
+        <p class="tarifa-precio">$130.000</p>
+      </div>
+      <div class="tarifa-card">
+        <p class="tarifa-tipo">Pack 2 noches · mié a dom</p>
+        <h3>Con almuerzo o cena</h3>
+        <p class="tarifa-precio">$210.000</p>
+      </div>
+      <div class="tarifa-card">
+        <p class="tarifa-tipo">Pack fin de semana · vie a dom</p>
+        <h3>Checkout late incluido</h3>
+        <p class="tarifa-precio">$240.000</p>
+        <p class="tarifa-detalle">Desayuno + almuerzo o cena del ingreso</p>
+      </div>
+      <div class="tarifa-card">
+        <p class="tarifa-tipo">Promo completa · mié a dom</p>
+        <h3>2 noches · checkout late</h3>
+        <p class="tarifa-precio">$320.000</p>
+        <p class="tarifa-detalle">Desayuno, almuerzo y cena incluidos</p>
+      </div>
+    </div>
+    <p class="tarifas-nota fade">Precios en pesos argentinos. Consultá disponibilidad y promociones vigentes por WhatsApp.</p>
+    <div style="text-align:center;" class="fade">
+      <a href="https://wa.me/5493516427600" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/></svg>
+        Consultar por WhatsApp
+      </a>
     </div>
   </div>
 </section>
@@ -810,6 +989,39 @@
   </div>
 </section>
 
+<!-- GRUPOS Y EXPERIENCIAS -->
+<section id="grupos">
+  <div class="container">
+    <div class="sec-header fade">
+      <h2>Experiencias y grupos</h2>
+      <div class="divider"></div>
+      <p>Villa Vadori Suites es el punto de partida ideal para distintas actividades en las sierras cordobesas.</p>
+    </div>
+    <div class="grupos-grid">
+      <div class="grupo-card fade">
+        <span class="grupo-ico">🚴</span>
+        <h3>Ciclistas y senderistas</h3>
+        <p>El complejo está en el inicio del camino al Observatorio Astronómico, uno de los recorridos más populares de la zona. También sobre un camino rural de bajísimo tránsito, ideal para salidas en bici o caminatas sin autos.</p>
+      </div>
+      <div class="grupo-card fade">
+        <span class="grupo-ico">🏎️</span>
+        <h3>Amantes del automovilismo</h3>
+        <p>A solo 8 km por camino interno del Autódromo Cabalén, Villa Vadori Suites es la base perfecta para quienes vienen a vivir la experiencia del automovilismo serrano. Estacionamiento cubierto disponible.</p>
+      </div>
+      <div class="grupo-card fade">
+        <span class="grupo-ico">🏍️</span>
+        <h3>Motos y autos clásicos</h3>
+        <p>Caminos serranos con poco tránsito, paisajes únicos y estacionamiento cubierto. El escenario perfecto para grupos que hacen de la ruta una experiencia.</p>
+      </div>
+      <div class="grupo-card fade">
+        <span class="grupo-ico">🎓</span>
+        <h3>Capacitaciones y talleres</h3>
+        <p>Una solución completa para jornadas de trabajo, capacitaciones o talleres: hospedaje para hasta 20 personas y gastronomía premiada a 80 metros. Todo en un mismo predio, en plena naturaleza serrana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ⑥ CÓMO LLEGAR -->
 <section id="llegar">
   <div class="container">
@@ -837,6 +1049,50 @@
         </iframe>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- POLÍTICAS -->
+<section id="politicas">
+  <div class="container">
+    <div class="sec-header fade">
+      <h2>Información útil</h2>
+      <div class="divider divider--light"></div>
+    </div>
+    <ul class="politicas-list fade">
+      <li class="politica-item">
+        <button class="politica-btn"><span>Check-in</span><span class="pol-toggle">+</span></button>
+        <div class="politica-body">A partir de las 15:00 hs.</div>
+      </li>
+      <li class="politica-item">
+        <button class="politica-btn"><span>Check-out</span><span class="pol-toggle">+</span></button>
+        <div class="politica-body">Hasta las 10:30 hs.</div>
+      </li>
+      <li class="politica-item">
+        <button class="politica-btn"><span>Check-out late</span><span class="pol-toggle">+</span></button>
+        <div class="politica-body">Disponible en packs de fin de semana y promo completa.</div>
+      </li>
+      <li class="politica-item">
+        <button class="politica-btn"><span>Fumadores</span><span class="pol-toggle">+</span></button>
+        <div class="politica-body">No se permite fumar en el interior de las unidades.</div>
+      </li>
+      <li class="politica-item">
+        <button class="politica-btn"><span>Solo adultos</span><span class="pol-toggle">+</span></button>
+        <div class="politica-body">El complejo es exclusivo para huéspedes mayores de edad.</div>
+      </li>
+      <li class="politica-item">
+        <button class="politica-btn"><span>Capacidad máxima</span><span class="pol-toggle">+</span></button>
+        <div class="politica-body">20 huéspedes en total (8 unidades).</div>
+      </li>
+      <li class="politica-item">
+        <button class="politica-btn"><span>Mascotas</span><span class="pol-toggle">+</span></button>
+        <div class="politica-body">Consultar disponibilidad al momento de la reserva.</div>
+      </li>
+      <li class="politica-item">
+        <button class="politica-btn"><span>Reservas</span><span class="pol-toggle">+</span></button>
+        <div class="politica-body">Exclusivamente por WhatsApp al +54 9 351 642-7600.</div>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -912,6 +1168,13 @@
     car.querySelector('.c-prev').addEventListener('click', () => go(cur - 1));
     car.querySelector('.c-next').addEventListener('click', () => go(cur + 1));
     dots.forEach((d, j) => d.addEventListener('click', () => go(j)));
+  });
+
+  // Accordion políticas
+  document.querySelectorAll('.politica-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.politica-item').classList.toggle('open');
+    });
   });
 </script>
 
