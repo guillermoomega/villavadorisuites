@@ -617,38 +617,58 @@
 
     /* ===== TARIFAS ===== */
     #tarifas { background: var(--suave); }
-    .tarifas-grid {
+    .tarifas-tabla {
+      max-width: 820px;
+      margin: 0 auto 2.5rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 20px rgba(75,85,99,.1);
+    }
+    .tarifas-head {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
+      grid-template-columns: 1fr 140px 140px;
+      gap: 1rem;
+      background: var(--gris);
+      color: var(--suave);
+      padding: 1rem 1.5rem;
+      align-items: center;
     }
-    .tarifa-card {
-      background: var(--crudo);
-      border-radius: 6px;
-      padding: 1.75rem 1.5rem;
-      text-align: center;
-      box-shadow: 0 2px 12px rgba(75,85,99,.09);
-    }
-    .tarifa-tipo {
-      font-size: .72rem;
+    .th {
+      font-size: .75rem;
       font-weight: 700;
-      letter-spacing: .14em;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--oxido);
-      margin-bottom: .4rem;
+      text-align: center;
     }
-    .tarifa-card h3 { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--gris); margin-bottom: .9rem; }
-    .tarifa-precio {
+    .th:first-child { text-align: left; }
+    .tarifas-row {
+      display: grid;
+      grid-template-columns: 1fr 140px 140px;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      align-items: center;
+      border-bottom: 1px solid rgba(75,85,99,.08);
+    }
+    .tarifas-row:last-child { border-bottom: none; }
+    .tarifas-row:nth-child(odd)  { background: var(--crudo); }
+    .tarifas-row:nth-child(even) { background: #eee8db; }
+    .tarifa-nombre { font-weight: 700; font-size: .95rem; color: var(--gris); margin-bottom: .25rem; }
+    .tarifa-sub { font-size: .82rem; color: #9ca3af; margin-bottom: 0; line-height: 1.4; }
+    .tarifa-precio-cell {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
       color: var(--borravino-d);
       font-weight: 700;
-      line-height: 1;
-      margin-bottom: .35rem;
+      text-align: center;
+      margin-bottom: 0;
     }
-    .tarifa-detalle { font-size: .8rem; color: #9ca3af; line-height: 1.4; margin-bottom: 0; }
     .tarifas-nota { text-align: center; font-size: .95rem; color: #6b7280; margin-bottom: 1.75rem; font-style: italic; }
+    @media (max-width: 560px) {
+      .tarifas-head { grid-template-columns: 1fr 88px 88px; padding: .85rem 1rem; }
+      .tarifas-row  { grid-template-columns: 1fr 88px 88px; padding: 1rem; gap: .5rem; }
+      .tarifa-precio-cell { font-size: 1rem; }
+      .tarifa-nombre { font-size: .88rem; }
+    }
 
     /* ===== GRUPOS ===== */
     #grupos { background: var(--beige); }
@@ -729,7 +749,6 @@
     <p class="hero-tag"><strong>Falda del Carmen &middot; Córdoba &middot; Argentina</strong></p>
     <img src="Isologotipo_Villa_Vadori suites serranas negro fondo transparente.png" alt="Villa Vadori Suites Serranas" class="hero-logo">
     <p class="hero-sub">Donde el descanso se une con el placer</p>
-    <a href="https://wa.me/5493516427600" target="_blank" rel="noopener" class="btn btn-primary">Quiero reservar</a>
   </div>
   <a href="#intro" class="hero-arrow" aria-label="Bajar">↓</a>
 </section>
@@ -749,12 +768,6 @@
 
 <!-- GALERÍA -->
 <section id="galeria">
-  <div class="container">
-    <div class="sec-header fade">
-      <h2>El lugar</h2>
-      <div class="divider"></div>
-    </div>
-  </div>
   <div class="galeria-wrap fade">
     <div class="carousel">
       <div class="carousel-track">
@@ -852,35 +865,37 @@
     <div class="sec-header fade">
       <h2>Tarifas</h2>
       <div class="divider"></div>
-      <p>Precios por unidad para dos personas. Todos incluyen desayuno.</p>
+      <p>Precios por unidad para 2 adultos en temporada baja. (incluye desayuno.)</p>
     </div>
-    <div class="tarifas-grid fade">
-      <div class="tarifa-card">
-        <p class="tarifa-tipo">Por noche</p>
-        <h3>Lunes a jueves</h3>
-        <p class="tarifa-precio">$90.000</p>
+    <div class="tarifas-tabla fade">
+      <div class="tarifas-head">
+        <div class="th">Paquete</div>
+        <div class="th">Suites</div>
+        <div class="th">Cuartos</div>
       </div>
-      <div class="tarifa-card">
-        <p class="tarifa-tipo">Por noche</p>
-        <h3>Viernes o sábado</h3>
-        <p class="tarifa-precio">$130.000</p>
+      <div class="tarifas-row">
+        <div>
+          <p class="tarifa-nombre">Pack fin de semana</p>
+          <p class="tarifa-sub">Viernes y sábados · incluye desayuno</p>
+        </div>
+        <p class="tarifa-precio-cell">$290.000</p>
+        <p class="tarifa-precio-cell">$240.000</p>
       </div>
-      <div class="tarifa-card">
-        <p class="tarifa-tipo">Pack 2 noches · mié a dom</p>
-        <h3>Con almuerzo o cena</h3>
-        <p class="tarifa-precio">$210.000</p>
+      <div class="tarifas-row">
+        <div>
+          <p class="tarifa-nombre">Pack Gourmet</p>
+          <p class="tarifa-sub">2 noches vie y sáb · almuerzo o cena de 3 pasos en Gran Vadori</p>
+        </div>
+        <p class="tarifa-precio-cell">$370.000</p>
+        <p class="tarifa-precio-cell">$310.000</p>
       </div>
-      <div class="tarifa-card">
-        <p class="tarifa-tipo">Pack fin de semana · vie a dom</p>
-        <h3>Checkout late incluido</h3>
-        <p class="tarifa-precio">$240.000</p>
-        <p class="tarifa-detalle">Desayuno + almuerzo o cena del ingreso</p>
-      </div>
-      <div class="tarifa-card">
-        <p class="tarifa-tipo">Promo completa · mié a dom</p>
-        <h3>2 noches · checkout late</h3>
-        <p class="tarifa-precio">$320.000</p>
-        <p class="tarifa-detalle">Desayuno, almuerzo y cena incluidos</p>
+      <div class="tarifas-row">
+        <div>
+          <p class="tarifa-nombre">Noche individual</p>
+          <p class="tarifa-sub">Jueves a sábados · incluye desayuno</p>
+        </div>
+        <p class="tarifa-precio-cell">$160.000</p>
+        <p class="tarifa-precio-cell">$130.000</p>
       </div>
     </div>
     <p class="tarifas-nota fade">Precios en pesos argentinos. Consultá disponibilidad y promociones vigentes por WhatsApp.</p>
@@ -921,10 +936,10 @@
         <p>Una cocina que respeta los sabores de la tierra cordobesa y los eleva con técnica y pasión. Abierto de jueves a domingo para el almuerzo, y los sábados a la noche para cena.</p>
         <p class="incluye-label">Lo que incluye tu estadía</p>
         <ul class="incluye">
-          <li>🍳 Desayuno en Gran Vadori — estadías de jueves a domingo</li>
-          <li>🧺 Canasta de desayuno en tu unidad — estadías de domingo a martes</li>
-          <li>🍽️ Almuerzo incluido — ingresos los miércoles o jueves</li>
-          <li>🥂 Un almuerzo o una cena incluidos — ingresos viernes o sábados</li>
+          <li>Desayuno en Gran Vadori — estadías de jueves a domingo</li>
+          <li>Canasta de desayuno en tu unidad — estadías de domingo a martes</li>
+          <li>Almuerzo incluido — ingresos los miércoles o jueves</li>
+          <li>Un almuerzo o una cena incluidos — ingresos viernes o sábados</li>
         </ul>
         <p class="gastro-nota">Consultá disponibilidad y combiná tu estadía con la experiencia gastronómica que más te inspire.</p>
         <div style="margin-top:2rem;">
@@ -966,8 +981,16 @@
       </div>
 
       <div class="predio-card fade">
-        <div class="predio-img predio-img--asador">
-          <span>[ FOTO — Asadores exteriores grupales y para parejas ]</span>
+        <div class="carousel" style="aspect-ratio:16/9; border-radius:0;">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="asador 1.jpg" alt="Los asadores — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div class="carousel-slide"><img src="asador 2.jpg" alt="Los asadores — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          </div>
+          <button class="c-btn c-prev">&#8249;</button>
+          <button class="c-btn c-next">&#8250;</button>
+          <div class="c-dots">
+            <span class="c-dot active"></span><span class="c-dot"></span>
+          </div>
         </div>
         <div class="predio-body">
           <h3>Los asadores</h3>
@@ -976,12 +999,20 @@
       </div>
 
       <div class="predio-card fade">
-        <div class="predio-img predio-img--entorno">
-          <span>[ FOTO — Monte nativo, árboles y entorno natural del predio ]</span>
+        <div class="carousel" style="aspect-ratio:16/9; border-radius:0;">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="piscina 1.jpg" alt="La piscina — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div class="carousel-slide"><img src="piscina 2.jpg" alt="La piscina — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          </div>
+          <button class="c-btn c-prev">&#8249;</button>
+          <button class="c-btn c-next">&#8250;</button>
+          <div class="c-dots">
+            <span class="c-dot active"></span><span class="c-dot"></span>
+          </div>
         </div>
         <div class="predio-body">
-          <h3>El entorno</h3>
-          <p>Los límites del predio están abrazados por monte nativo en estado puro. Sin ruidos, sin vecinos, sin distracciones. Solo el sonido de los pájaros, el viento entre los árboles y la paz que las sierras cordobesas saben dar como nadie.</p>
+          <h3>La piscina</h3>
+          <p>Una piscina tipo playa rodeada por un arroyo artificial de 50 metros. El espacio ideal para refrescarse, tomar sol y disfrutar del agua con la tranquilidad de un entorno privado en plena naturaleza serrana.</p>
         </div>
       </div>
 
@@ -993,29 +1024,25 @@
 <section id="grupos">
   <div class="container">
     <div class="sec-header fade">
-      <h2>Experiencias y grupos</h2>
+      <h2>Experiencias y actividades grupales</h2>
       <div class="divider"></div>
       <p>Villa Vadori Suites es el punto de partida ideal para distintas actividades en las sierras cordobesas.</p>
     </div>
     <div class="grupos-grid">
       <div class="grupo-card fade">
-        <span class="grupo-ico">🚴</span>
-        <h3>Ciclistas y senderistas</h3>
+<h3>Ciclistas y senderistas</h3>
         <p>El complejo está en el inicio del camino al Observatorio Astronómico, uno de los recorridos más populares de la zona. También sobre un camino rural de bajísimo tránsito, ideal para salidas en bici o caminatas sin autos.</p>
       </div>
       <div class="grupo-card fade">
-        <span class="grupo-ico">🏎️</span>
-        <h3>Amantes del automovilismo</h3>
+<h3>Amantes del automovilismo</h3>
         <p>A solo 8 km por camino interno del Autódromo Cabalén, Villa Vadori Suites es la base perfecta para quienes vienen a vivir la experiencia del automovilismo serrano. Estacionamiento cubierto disponible.</p>
       </div>
       <div class="grupo-card fade">
-        <span class="grupo-ico">🏍️</span>
-        <h3>Motos y autos clásicos</h3>
+<h3>Motos y autos clásicos</h3>
         <p>Caminos serranos con poco tránsito, paisajes únicos y estacionamiento cubierto. El escenario perfecto para grupos que hacen de la ruta una experiencia.</p>
       </div>
       <div class="grupo-card fade">
-        <span class="grupo-ico">🎓</span>
-        <h3>Capacitaciones y talleres</h3>
+<h3>Capacitaciones y talleres</h3>
         <p>Una solución completa para jornadas de trabajo, capacitaciones o talleres: hospedaje para hasta 20 personas y gastronomía premiada a 80 metros. Todo en un mismo predio, en plena naturaleza serrana.</p>
       </div>
     </div>
@@ -1033,9 +1060,9 @@
     <div class="llegar-layout fade">
       <div>
         <ul class="distancias">
-          <li><span class="ico">🚗</span><span><strong>30 minutos</strong> de Córdoba Capital</span></li>
-          <li><span class="ico">🚗</span><span><strong>20 minutos</strong> de Villa Carlos Paz</span></li>
-          <li><span class="ico">🚗</span><span><strong>40 minutos</strong> de Villa General Belgrano</span></li>
+          <li><span><strong>30 minutos</strong> de Córdoba Capital</span></li>
+          <li><span><strong>20 minutos</strong> de Villa Carlos Paz</span></li>
+          <li><span><strong>40 minutos</strong> de Villa General Belgrano</span></li>
         </ul>
         <a href="https://maps.app.goo.gl/Kjf7zWqLZWPTw9Qo7" target="_blank" rel="noopener" class="btn btn-primary">Cómo llegar →</a>
       </div>
@@ -1121,9 +1148,9 @@
   <div class="container">
     <div class="footer-brand"><img src="Isologotipo_Villa_Vadori suites serranas negro fondo transparente.png" alt="Villa Vadori Suites Serranas" class="footer-logo"></div>
     <div class="footer-links">
-      <a href="https://maps.app.goo.gl/Kjf7zWqLZWPTw9Qo7" target="_blank" rel="noopener">📍 Falda del Carmen, Córdoba, Argentina</a>
-      <a href="https://wa.me/5493516427600" target="_blank" rel="noopener">📱 +5493516427600</a>
-      <a href="https://instagram.com/villavadori.suites" target="_blank" rel="noopener">📷 @villavadori.suites</a>
+      <a href="https://maps.app.goo.gl/Kjf7zWqLZWPTw9Qo7" target="_blank" rel="noopener">Falda del Carmen, Córdoba, Argentina</a>
+      <a href="https://wa.me/5493516427600" target="_blank" rel="noopener">+54 9 351 642-7600</a>
+      <a href="https://instagram.com/villavadori.suites" target="_blank" rel="noopener">@villavadori.suites</a>
     </div>
     <div class="footer-sep"></div>
     <p class="footer-copy">© 2026 Villa Vadori Suites &middot; Todos los derechos reservados</p>
