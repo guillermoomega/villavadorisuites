@@ -493,12 +493,12 @@
       padding: 6rem 0;
     }
     #cierre h2 {
-      color: var(--suave);
+      color: var(--gris);
       font-size: clamp(2.1rem, 5vw, 3.6rem);
       margin-bottom: 1.5rem;
     }
     #cierre > .container > p {
-      color: rgba(245,240,232,.83);
+      color: var(--gris);
       max-width: 640px;
       margin-left: auto;
       margin-right: auto;
@@ -509,7 +509,7 @@
       font-size: .78rem;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: rgba(245,240,232,.5);
+      color: var(--gris);
       margin-top: .5rem;
     }
     .cierre-ctas {
@@ -694,39 +694,21 @@
     #politicas .sec-header p { color: rgba(245,240,232,.7); }
     #politicas .divider { background: rgba(245,240,232,.35); }
     .politicas-list { max-width: 700px; margin: 0 auto; list-style: none; }
-    .politica-item { border-bottom: 1px solid rgba(245,240,232,.12); }
-    .politica-item:first-child { border-top: 1px solid rgba(245,240,232,.12); }
-    .politica-btn {
-      width: 100%;
+    .politica-item {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.1rem 0;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'Lato', sans-serif;
-      font-size: 1rem;
+      gap: .4rem;
+      padding: .85rem 0;
+      border-bottom: 1px solid rgba(245,240,232,.12);
+      font-size: .98rem;
+      color: rgba(245,240,232,.8);
+      line-height: 1.5;
+    }
+    .politica-item:first-child { border-top: 1px solid rgba(245,240,232,.12); }
+    .pol-label {
+      font-weight: 700;
       color: var(--suave);
-      text-align: left;
-      gap: 1rem;
+      white-space: nowrap;
     }
-    .pol-toggle {
-      font-size: 1.4rem;
-      line-height: 1;
-      transition: transform .25s;
-      flex-shrink: 0;
-      color: var(--oxido);
-    }
-    .politica-item.open .pol-toggle { transform: rotate(45deg); }
-    .politica-body {
-      display: none;
-      padding: 0 0 1.1rem;
-      font-size: .95rem;
-      color: rgba(245,240,232,.75);
-      line-height: 1.6;
-    }
-    .politica-item.open .politica-body { display: block; }
 
     /* ===== RESPONSIVE (nuevas secciones) ===== */
     @media (max-width: 700px) {
@@ -794,38 +776,6 @@
       <div class="divider"></div>
       <p>Ocho unidades diseñadas para que no falte nada ni sobre nada. Cada espacio pensado para dos, con el confort justo y el entorno como protagonista.</p>
     </div>
-    <!-- CUARTOS -->
-    <div class="unit-block fade">
-      <div class="unit-carousel">
-        <div class="carousel">
-          <div class="carousel-track">
-            <div class="carousel-slide"><img src="cuarto.jpeg" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-            <div class="carousel-slide"><img src="cuarto 1.jpg" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-            <div class="carousel-slide"><img src="cuarto 2.JPG" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-            <div class="carousel-slide"><img src="cuarto 3.jpg" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-            <div class="carousel-slide"><img src="cuarto 4.jpg" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-          </div>
-          <button class="c-btn c-prev">&#8249;</button>
-          <button class="c-btn c-next">&#8250;</button>
-          <div class="c-dots">
-            <span class="c-dot active"></span><span class="c-dot"></span><span class="c-dot"></span><span class="c-dot"></span><span class="c-dot"></span>
-          </div>
-        </div>
-      </div>
-      <div class="unit-info">
-        <span class="card-badge">4 unidades &middot; 20 m²</span>
-        <h3>Cuartos</h3>
-        <p>Espacios de 20 m² con todo lo necesario para descansar de verdad. Terraza exclusiva con vista al arroyo, donde el sonido del agua y el verde serrano son tu compañía permanente.</p>
-        <ul class="features">
-          <li>Aire acondicionado frío/calor</li>
-          <li>WiFi · TV Smart 42"</li>
-          <li>Juego de mesa y sillas · pava eléctrica</li>
-          <li>Vajilla · ropa blanca · insumos de baño</li>          
-          <li>Camas: Twin 90×190 o Dual King 180×190</li>
-        </ul>
-      </div>
-    </div>
-
     <!-- SUITES INDEPENDIENTES -->
     <div class="unit-block fade">
       <div class="unit-carousel">
@@ -855,69 +805,45 @@
           <li>Aire acondicionado frío/calor</li>
           <li>WiFi · TV Smart 42"</li>
           <li>Kitchenet con bacha, frigobar, microondas y pava eléctrica · </li>
-          <li>Juego de mesa y sillas </li>
+          <li>Juego de mesa y sillas tipo bar y juego de sillas materas. </li>
           <li>Vajilla · ropa blanca · insumos de baño</li>
           <li>Limpieza diaria</li>
           <li>Camas: Twin 90×190 o Dual King 180×190</li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- TARIFAS -->
-<section id="tarifas">
-  <div class="container">
-    <div class="sec-header fade">
-      <h2>Tarifas</h2>
-      <div class="divider"></div>
-      <p>Precios por unidad para 2 adultos en temporada baja. (incluye desayuno.)</p>
-    </div>
-    <div class="tarifas-tabla fade">
-      <div class="tarifas-head">
-        <div class="th">Paquete</div>
-        <div class="th">Suites</div>
-        <div class="th">Cuartos</div>
-      </div>
-      <div class="tarifas-row">
-        <div>
-          <p class="tarifa-nombre">Pack fin de semana full gourmet</p>
-          <p class="tarifa-sub">Ingreso el viernes, salida el domingo por la tarde. Incluye desayuno , un almuerzo y una cena de tres pasos en Gran Vadori restaurante.</p>
+    <!-- CUARTOS -->
+    <div class="unit-block fade">
+      <div class="unit-carousel">
+        <div class="carousel">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="cuarto.jpeg" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div class="carousel-slide"><img src="cuarto 1.jpg" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div class="carousel-slide"><img src="cuarto 2.JPG" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div class="carousel-slide"><img src="cuarto 3.jpg" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div class="carousel-slide"><img src="cuarto 4.jpg" alt="Cuarto — Villa Vadori Suites" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          </div>
+          <button class="c-btn c-prev">&#8249;</button>
+          <button class="c-btn c-next">&#8250;</button>
+          <div class="c-dots">
+            <span class="c-dot active"></span><span class="c-dot"></span><span class="c-dot"></span><span class="c-dot"></span><span class="c-dot"></span>
+          </div>
         </div>
-        <p class="tarifa-precio-cell">$410.000</p>
-        <p class="tarifa-precio-cell">$360.000</p>
       </div>
-      <div class="tarifas-row">
-        <div>
-          <p class="tarifa-nombre">Pack fin de semana gourmet</p>
-          <p class="tarifa-sub">Ingreso el viernes, salida el domingo por la tarde. Incluye desayuno y un almuerzo o una cena de tres pasos el día sábado en Gran Vadori restaurante.</p>
-        </div>
-        <p class="tarifa-precio-cell">$340.000</p>
-        <p class="tarifa-precio-cell">$290.000</p>
+      <div class="unit-info">
+        <span class="card-badge">4 unidades &middot; 20 m²</span>
+        <h3>Cuartos</h3>
+        <p>Espacios de 20 m² con todo lo necesario para descansar de verdad. Terraza exclusiva con vista al arroyo, donde el sonido del agua y el verde serrano son tu compañía permanente.</p>
+        <ul class="features">
+          <li>Aire acondicionado frío/calor</li>
+          <li>WiFi · TV Smart 42"</li>
+          <li>Juego de mesa y sillas · pava eléctrica</li>
+          <li>Vajilla · ropa blanca · insumos de baño</li>
+          <li>Terraza privada con vista al arroyo</li>
+          <li>Camas: Twin 90×190 o Dual King 180×190</li>
+        </ul>
       </div>
-      <div class="tarifas-row">
-        <div>
-          <p class="tarifa-nombre">Pack fin de semana</p>
-          <p class="tarifa-sub">Ingreso el viernes, salida el domingo por la tarde. Incluye desayuno.</p>
-        </div>
-        <p class="tarifa-precio-cell">$260.000</p>
-        <p class="tarifa-precio-cell">$210.000</p>
-      </div>
-      <div class="tarifas-row">
-        <div>
-          <p class="tarifa-nombre">Estadía individual</p>
-          <p class="tarifa-sub">Una noche con ingreso de jueves a sábados. Incluye desayuno.</p>
-        </div>
-        <p class="tarifa-precio-cell">$160.000</p>
-        <p class="tarifa-precio-cell">$130.000</p>
-      </div>
-    </div>
-    <p class="tarifas-nota fade">Precios en pesos argentinos. Consultá disponibilidad y promociones vigentes por WhatsApp.</p>
-    <div style="text-align:center;" class="fade">
-      <a href="https://wa.me/5493516427600" target="_blank" rel="noopener" class="btn btn-primary">
-        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/></svg>
-        Consultar por WhatsApp
-      </a>
     </div>
   </div>
 </section>
@@ -1064,6 +990,63 @@
   </div>
 </section>
 
+<!-- TARIFAS -->
+<section id="tarifas">
+  <div class="container">
+    <div class="sec-header fade">
+      <h2>Tarifas</h2>
+      <div class="divider"></div>
+      <p>Precios por unidad para 2 adultos en temporada baja. (incluye desayuno.)</p>
+    </div>
+    <div class="tarifas-tabla fade">
+      <div class="tarifas-head">
+        <div class="th">Paquete</div>
+        <div class="th">Suites</div>
+        <div class="th">Cuartos</div>
+      </div>
+      <div class="tarifas-row">
+        <div>
+          <p class="tarifa-nombre">Pack fin de semana full gourmet</p>
+          <p class="tarifa-sub">Ingreso el viernes, salida el domingo por la tarde. Incluye desayuno , un almuerzo y una cena de tres pasos en Gran Vadori restaurante.</p>
+        </div>
+        <p class="tarifa-precio-cell">$410.000</p>
+        <p class="tarifa-precio-cell">$360.000</p>
+      </div>
+      <div class="tarifas-row">
+        <div>
+          <p class="tarifa-nombre">Pack fin de semana gourmet</p>
+          <p class="tarifa-sub">Ingreso el viernes, salida el domingo por la tarde. Incluye desayuno y un almuerzo o una cena de tres pasos el día sábado en Gran Vadori restaurante.</p>
+        </div>
+        <p class="tarifa-precio-cell">$340.000</p>
+        <p class="tarifa-precio-cell">$290.000</p>
+      </div>
+      <div class="tarifas-row">
+        <div>
+          <p class="tarifa-nombre">Pack fin de semana</p>
+          <p class="tarifa-sub">Ingreso el viernes, salida el domingo por la tarde. Incluye desayuno.</p>
+        </div>
+        <p class="tarifa-precio-cell">$260.000</p>
+        <p class="tarifa-precio-cell">$210.000</p>
+      </div>
+      <div class="tarifas-row">
+        <div>
+          <p class="tarifa-nombre">Estadía individual</p>
+          <p class="tarifa-sub">Una noche con ingreso de jueves a sábados. Incluye desayuno.</p>
+        </div>
+        <p class="tarifa-precio-cell">$160.000</p>
+        <p class="tarifa-precio-cell">$130.000</p>
+      </div>
+    </div>
+    <p class="tarifas-nota fade">Precios en pesos argentinos. Consultá disponibilidad y promociones vigentes por WhatsApp.</p>
+    <div style="text-align:center;" class="fade">
+      <a href="https://wa.me/5493516427600" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/></svg>
+        Consultar por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ⑥ CÓMO LLEGAR -->
 <section id="llegar">
   <div class="container">
@@ -1102,38 +1085,14 @@
       <div class="divider divider--light"></div>
     </div>
     <ul class="politicas-list fade">
-      <li class="politica-item">
-        <button class="politica-btn"><span>Check-in</span><span class="pol-toggle">+</span></button>
-        <div class="politica-body">A partir de las 15:00 hs.</div>
-      </li>
-      <li class="politica-item">
-        <button class="politica-btn"><span>Check-out</span><span class="pol-toggle">+</span></button>
-        <div class="politica-body">Hasta las 10:30 hs.</div>
-      </li>
-      <li class="politica-item">
-        <button class="politica-btn"><span>Check-out late</span><span class="pol-toggle">+</span></button>
-        <div class="politica-body">Disponible en packs de fin de semana y promo completa.</div>
-      </li>
-      <li class="politica-item">
-        <button class="politica-btn"><span>Fumadores</span><span class="pol-toggle">+</span></button>
-        <div class="politica-body">No se permite fumar en el interior de las unidades.</div>
-      </li>
-      <li class="politica-item">
-        <button class="politica-btn"><span>Solo adultos</span><span class="pol-toggle">+</span></button>
-        <div class="politica-body">El complejo es exclusivo para huéspedes mayores de edad.</div>
-      </li>
-      <li class="politica-item">
-        <button class="politica-btn"><span>Capacidad máxima</span><span class="pol-toggle">+</span></button>
-        <div class="politica-body">20 huéspedes en total (8 unidades).</div>
-      </li>
-      <li class="politica-item">
-        <button class="politica-btn"><span>Mascotas</span><span class="pol-toggle">+</span></button>
-        <div class="politica-body">Consultar disponibilidad al momento de la reserva.</div>
-      </li>
-      <li class="politica-item">
-        <button class="politica-btn"><span>Reservas</span><span class="pol-toggle">+</span></button>
-        <div class="politica-body">Exclusivamente por WhatsApp al +54 9 351 642-7600.</div>
-      </li>
+      <li class="politica-item"><span class="pol-label">Check-in</span> : A partir de las 15:00 hs.</li>
+      <li class="politica-item"><span class="pol-label">Check-out</span> : Hasta las 10:30 hs.</li>
+      <li class="politica-item"><span class="pol-label">Check-out late</span> : Disponible en packs de fin de semana.</li>
+      <li class="politica-item"><span class="pol-label">Fumadores</span> : No se permite fumar en el interior de las unidades.</li>
+      <li class="politica-item"><span class="pol-label">Solo adultos</span> : El complejo es exclusivo para huéspedes mayores de 16.</li>
+      <li class="politica-item"><span class="pol-label">Capacidad máxima</span> : 20 huéspedes en total (8 unidades).</li>
+      <li class="politica-item"><span class="pol-label">Mascotas</span> : Consultar disponibilidad al momento de la reserva.</li>
+      <li class="politica-item"><span class="pol-label">Reservas</span> : Exclusivamente por WhatsApp al +54 9 351 642-7600.</li>
     </ul>
   </div>
 </section>
