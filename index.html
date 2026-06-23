@@ -1005,7 +1005,7 @@
         <div class="th">Suites independientes</div>
         <div class="th">Cuartos en suites</div>
       </div>
-      <div class="tarifas-row">
+      <div class="tarifas-row" data-pack="Gran Finde Vadori">
         <div>
           <p class="tarifa-nombre">Gran Finde Vadori</p>
           <p class="tarifa-sub">Noches de viernes y sábado con desayunos, un almuerzo (viernes o sábado) y la cena del sábado en Gran Vadori.</p>
@@ -1013,7 +1013,7 @@
         <p class="tarifa-precio-cell">$400.000</p>
         <p class="tarifa-precio-cell">$370.000</p>
       </div>
-      <div class="tarifas-row">
+      <div class="tarifas-row" data-pack="Finde Gourmet">
         <div>
           <p class="tarifa-nombre">Finde Gourmet</p>
           <p class="tarifa-sub">Noches de viernes y sábado con desayunos y una cena de tres pasos en Gran Vadori.</p>
@@ -1021,7 +1021,7 @@
         <p class="tarifa-precio-cell">$320.000</p>
         <p class="tarifa-precio-cell">$290.000</p>
       </div>
-      <div class="tarifas-row">
+      <div class="tarifas-row" data-pack="Finde Light">
         <div>
           <p class="tarifa-nombre">Finde Light</p>
           <p class="tarifa-sub">Noches de viernes y sábado con desayunos.</p>
@@ -1029,7 +1029,7 @@
         <p class="tarifa-precio-cell">$250.000</p>
         <p class="tarifa-precio-cell">$220.000</p>
       </div>
-      <div class="tarifas-row">
+      <div class="tarifas-row" data-pack="Sábado Gourmet">
         <div>
           <p class="tarifa-nombre">Sábado Gourmet</p>
           <p class="tarifa-sub">Noche del sábado con desayuno y cena de tres pasos en Gran Vadori.</p>
@@ -1037,7 +1037,7 @@
         <p class="tarifa-precio-cell">$240.000</p>
         <p class="tarifa-precio-cell">$210.000</p>
       </div>
-      <div class="tarifas-row">
+      <div class="tarifas-row" data-pack="Viernes Gourmet">
         <div>
           <p class="tarifa-nombre">Viernes Gourmet</p>
           <p class="tarifa-sub">Noche del viernes con desayuno y cena de tres pasos en Gran Vadori.</p>
@@ -1045,7 +1045,7 @@
         <p class="tarifa-precio-cell">$220.000</p>
         <p class="tarifa-precio-cell">$190.000</p>
       </div>
-      <div class="tarifas-row">
+      <div class="tarifas-row" data-pack="Estándar">
         <div>
           <p class="tarifa-nombre">Estándar</p>
           <p class="tarifa-sub">Noche individual con ingreso de jueves a sábados. Incluye desayuno.</p>
@@ -1191,5 +1191,27 @@
   });
 </script>
 
+<script>
+(function () {
+  fetch('https://n8ngv-n8n.snjbsa.easypanel.host/webhook/tarifas-vvs')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      // Ocultar todas las filas primero
+      document.querySelectorAll('[data-pack]').forEach(function (row) {
+        row.style.display = 'none';
+      });
+      // Mostrar y actualizar solo las activas
+      data.forEach(function (item) {
+        var row = document.querySelector('[data-pack="' + item.pack + '"]');
+        if (!row) return;
+        row.style.display = '';
+        var celdas = row.querySelectorAll('.tarifa-precio-cell');
+        if (celdas[0]) celdas[0].textContent = '$' + Number(item.suite).toLocaleString('es-AR');
+        if (celdas[1]) celdas[1].textContent = '$' + Number(item.cuarto).toLocaleString('es-AR');
+      });
+    })
+    .catch(function () { /* si el fetch falla, se muestran todos los precios estáticos */ });
+})();
+</script>
 </body>
 </html>
