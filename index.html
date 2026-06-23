@@ -1210,7 +1210,14 @@
         if (celdas[1]) celdas[1].textContent = '$' + Number(item.cuarto).toLocaleString('es-AR');
       });
     })
-    .catch(function () { /* si el fetch falla, se muestran todos los precios estáticos */ });
+    .catch(function () {
+      document.querySelectorAll('[data-pack]').forEach(function (row) {
+        row.style.display = '';
+        row.querySelectorAll('.tarifa-precio-cell').forEach(function (cell) {
+          cell.textContent = '';
+        });
+      });
+    });
 })();
 </script>
 </body>
