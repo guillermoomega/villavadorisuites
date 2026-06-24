@@ -185,24 +185,26 @@
     }
     .hero-mute-btn {
       position: absolute;
-      bottom: 2rem;
+      top: 5.5rem;
       right: 2rem;
       z-index: 3;
       background: rgba(0,0,0,.35);
       border: 1px solid rgba(255,255,255,.3);
       color: #fff;
-      font-size: 1.2rem;
-      width: 2.6rem;
-      height: 2.6rem;
-      border-radius: 50%;
+      font-size: .8rem;
+      padding: .45rem .9rem;
+      border-radius: 2rem;
       cursor: pointer;
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: .4rem;
       transition: background .2s;
       backdrop-filter: blur(4px);
+      letter-spacing: .03em;
     }
     .hero-mute-btn:hover { background: rgba(0,0,0,.55); }
+    .hero-mute-btn .mute-icon { font-size: 1rem; }
+    .hero-mute-btn .mute-label { font-family: 'Lato', sans-serif; font-size: .75rem; opacity: .9; }
     .hero-overlay {
       position: absolute;
       inset: 0;
@@ -765,7 +767,10 @@
     <p class="hero-sub">Donde el descanso se une con el placer</p>
   </div>
   <a href="#intro" class="hero-arrow" aria-label="Bajar">↓</a>
-  <button class="hero-mute-btn" id="heroMuteBtn" aria-label="Activar sonido">🔇</button>
+  <button class="hero-mute-btn" id="heroMuteBtn" aria-label="Activar sonido">
+    <span class="mute-icon">🔇</span>
+    <span class="mute-label" id="muteLabel">Activá el sonido</span>
+  </button>
 </section>
 
 <!-- ② INTRODUCCIÓN -->
@@ -1183,7 +1188,8 @@
   if (btn && vid) {
     btn.addEventListener('click', function () {
       vid.muted = !vid.muted;
-      btn.textContent = vid.muted ? '🔇' : '🔊';
+      btn.querySelector('.mute-icon').textContent = vid.muted ? '🔇' : '🔊';
+      btn.querySelector('.mute-label').textContent = vid.muted ? 'Activá el sonido' : 'Silenciar';
       btn.setAttribute('aria-label', vid.muted ? 'Activar sonido' : 'Silenciar');
     });
   }
