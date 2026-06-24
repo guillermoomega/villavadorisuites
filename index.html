@@ -176,6 +176,13 @@
       inset: 0;
       background: url('portada.jpg') center center / cover no-repeat;
     }
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     .hero-overlay {
       position: absolute;
       inset: 0;
@@ -726,7 +733,11 @@
 
 <!-- ① HERO -->
 <section id="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+    <video class="hero-video" autoplay muted loop playsinline poster="portada.jpg">
+      <source src="hero.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-tag"><strong>Falda del Carmen &middot; Córdoba &middot; Argentina</strong></p>
@@ -740,7 +751,7 @@
 <section id="intro">
   <div class="container">
     <div class="inner fade">
-      <h2>Un lugar donde el tiempo se detiene</h2>
+      <h2>Un lugar que detiene el tiempo</h2>
       <div class="divider"></div>
       <p style="margin-top:1.75rem;">En el corazón de los valles serranos cordobeses, a solo 30 minutos de Córdoba Capital, existe un lugar donde el tiempo se detiene.</p>
       <p>Villa Vadori Suites es un complejo exclusivo para adultos de 8 unidades cuidadosamente diseñadas, rodeadas de monte nativo, silencio y un parque con arroyo y piscina que invitan a no hacer nada... o a hacerlo todo.</p>
