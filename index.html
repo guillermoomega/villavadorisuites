@@ -771,7 +771,151 @@
     @media (max-width: 700px) {
       .galeria-wrap .carousel { height: 300px; }
     }
+
+    /* ===== FAQ ===== */
+    #faq { background: var(--suave); }
+    .faq-list { max-width: 760px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid rgba(75,85,99,.12); }
+    .faq-item:first-child { border-top: 1px solid rgba(75,85,99,.12); }
+    .faq-item summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--gris);
+      cursor: pointer;
+      gap: 1rem;
+      user-select: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-arrow {
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      border: 1.5px solid var(--oxido);
+      color: var(--oxido);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      font-family: 'Lato', sans-serif;
+      font-style: normal;
+      transition: transform .25s;
+      line-height: 1;
+    }
+    details[open] .faq-arrow { transform: rotate(45deg); }
+    .faq-body {
+      padding: 0 0 1.25rem;
+      font-size: .97rem;
+      color: #5a6070;
+      line-height: 1.7;
+    }
+    .faq-body p { margin-bottom: .5rem; }
+    .faq-body p:last-child { margin-bottom: 0; }
+    .faq-body ul { padding-left: 1.2rem; margin: .4rem 0; }
+    .faq-body ul li { margin-bottom: .25rem; color: #5a6070; }
   </style>
+
+  <!-- FAQPage structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Villa Vadori Suites es solo para adultos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, Villa Vadori Suites es un complejo exclusivo para adultos, admitiendo huéspedes mayores de 15 años. La capacidad máxima es de 16 huéspedes distribuidos en 8 unidades."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde está ubicado Villa Vadori Suites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Villa Vadori Suites está en Falda del Carmen, Sierras de Córdoba, Argentina, a 30 minutos de Córdoba Capital, 20 minutos de Villa Carlos Paz y 40 minutos de Villa General Belgrano."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué tipos de unidades tiene Villa Vadori Suites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hay 4 cuartos en suite de 20 m² con terraza privada y vista al arroyo, y 4 suites independientes de 24 m² con mayor privacidad y autonomía. Todas cuentan con aire acondicionado frío/calor, WiFi, TV Smart 42\" y limpieza diaria."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿A qué hora es el check-in y el check-out?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El check-in es a partir de las 14:30 hs y el check-out hasta las 10:30 hs. Los domingos, dentro de los packs de fin de semana, hay salida tardía disponible."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿El desayuno está incluido?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. De jueves a domingos y feriados el desayuno se sirve en Gran Vadori de 9 a 11 hs, e incluye café expreso, té, tostadas de pan casero, mermelada artesanal, huevo revuelto, queso crema y jamón asado. El resto de los días se entrega un desayuno seco en la suite."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta una noche en Villa Vadori Suites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Valores de referencia en temporada baja, para 2 adultos: una noche con desayuno, desde $140.000 en cuartos en suite y $180.000 en suites independientes. Una noche con desayuno y un almuerzo o cena en Gran Vadori, desde $220.000 en cuartos en suite y $260.000 en suites independientes. Dos noches con desayuno y dos almuerzos o cenas, desde $360.000 en cuartos en suite y $430.000 en suites independientes. Las tarifas varían según temporada y promociones vigentes; consultá disponibilidad actualizada por WhatsApp."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se puede comer en el restaurante Gran Vadori durante la estadía?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Gran Vadori, a 80 metros de las unidades, es un restaurante de cocina criolla gourmet con 15 años de trayectoria premiada, abierto de jueves a domingo para el almuerzo y los sábados también para la cena."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo se hacen las reservas en Villa Vadori Suites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las reservas se gestionan exclusivamente por WhatsApp al +54 9 351 642-7600."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se admiten mascotas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, Villa Vadori Suites no admite mascotas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo es el servicio de limpieza durante la estadía?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Se realiza limpieza diaria en todas las unidades. Las sábanas se cambian en la cuarta noche de estadía, salvo que se solicite un cambio extra."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué actividades hay para hacer cerca de Villa Vadori Suites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El complejo está al inicio del camino al Observatorio Astronómico, ideal para ciclismo y senderismo, y a 8 km del Autódromo Cabalén, lo que lo convierte en base de grupos de automovilismo, motos y autos clásicos. También recibe grupos de retiros de yoga y bienestar, capacitaciones y talleres corporativos."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -947,6 +1091,7 @@
          <li>Carta de vinos diseñada por su sommelier</li>
         </ul>
         <p class="gastro-nota">Consultá disponibilidad y combiná tu estadía con la experiencia gastronómica que más te inspire.</p>
+        <p class="gastro-nota">En la zona también podés encontrar El Quito y Zorra Negra.</p>
         <div style="margin-top:2rem;">
           <a href="https://wa.me/5493516427600" target="_blank" rel="noopener" class="btn btn-primary" onclick="gtag('event', 'whatsapp_click', {'event_category': 'contact', 'event_label': 'gastronomia'});">Quiero reservar</a>
         </div>
@@ -1051,6 +1196,10 @@
 <h3>Capacitaciones y talleres</h3>
         <p>Una solución completa para jornadas de trabajo, capacitaciones o talleres: hospedaje para hasta 20 personas y gastronomía premiada a 80 metros. Todo en un mismo predio, en plena naturaleza serrana.</p>
       </div>
+      <div class="grupo-card fade">
+        <h3>Retiros de yoga y bienestar</h3>
+        <p>El entorno serrano y la privacidad de las unidades independientes son ideales para grupos de retiro de yoga, meditación o prácticas holísticas en plena naturaleza.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1139,6 +1288,124 @@
 </section>
 
 
+
+<!-- PREGUNTAS FRECUENTES -->
+<section id="faq">
+  <div class="container">
+    <div class="sec-header fade">
+      <h2>Preguntas frecuentes</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list fade">
+
+      <div class="faq-item">
+        <details>
+          <summary>¿Villa Vadori Suites es solo para adultos? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">
+            <p>Sí, Villa Vadori Suites es un complejo exclusivo para adultos, admitiendo huéspedes mayores de 15 años. La capacidad máxima es de 16 huéspedes distribuidos en 8 unidades.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>¿Dónde está ubicado Villa Vadori Suites? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">
+            <p>Estamos en Falda del Carmen, Sierras de Córdoba, Argentina, a 30 minutos de Córdoba Capital, 20 minutos de Villa Carlos Paz y 40 minutos de Villa General Belgrano.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>¿Qué tipos de unidades tienen? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">
+            <p>Contamos con 4 cuartos en suite de 20 m² con terraza privada y vista al arroyo, y 4 suites independientes de 24 m² con mayor privacidad y autonomía. Todas cuentan con aire acondicionado frío/calor, WiFi, TV Smart 42" y limpieza diaria.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>¿A qué hora es el check-in y el check-out? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">
+            <p>El check-in es a partir de las 14:30 hs y el check-out hasta las 10:30 hs. Los domingos, dentro de los packs de fin de semana, hay salida tardía disponible.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>¿El desayuno está incluido? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">
+            <p>Sí. De jueves a domingos y feriados el desayuno se sirve en Gran Vadori de 9 a 11 hs, e incluye café expreso, té, tostadas de pan casero, mermelada artesanal, huevo revuelto, queso crema y jamón asado. El resto de los días se entrega un desayuno seco en la suite.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>¿Cuánto cuesta una noche en Villa Vadori Suites? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">
+            <p>Valores de referencia en temporada baja, para 2 adultos:</p>
+            <ul>
+              <li>1 noche con desayuno: desde $140.000 (cuartos en suite) / $180.000 (suites independientes)</li>
+              <li>1 noche con desayuno + almuerzo o cena en Gran Vadori: desde $220.000 / $260.000</li>
+              <li>2 noches con desayuno + 2 almuerzos o cenas: desde $360.000 / $430.000</li>
+            </ul>
+            <p>Las tarifas varían según temporada y promociones vigentes. Consultá disponibilidad actualizada por WhatsApp.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>¿Se puede comer en Gran Vadori durante la estadía? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">
+            <p>Sí. Gran Vadori, a 80 metros de las unidades, es un restaurante de cocina criolla gourmet con 15 años de trayectoria premiada, abierto de jueves a domingo para el almuerzo y los sábados también para la cena.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>¿Cómo se hacen las reservas? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">
+            <p>Las reservas se gestionan exclusivamente por WhatsApp al +54 9 351 642-7600.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>¿Se admiten mascotas? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">
+            <p>No, Villa Vadori Suites no admite mascotas.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>¿Cómo es el servicio de limpieza? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">
+            <p>Se realiza limpieza diaria en todas las unidades. Las sábanas se cambian en la cuarta noche de estadía, salvo que se solicite un cambio extra.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>¿Qué actividades hay cerca? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">
+            <p>El complejo está al inicio del camino al Observatorio Astronómico, ideal para ciclismo y senderismo, y a 8 km del Autódromo Cabalén. También es punto de partida para grupos de motos y autos clásicos, retiros de yoga y bienestar, y capacitaciones corporativas.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ⑦ CIERRE -->
 <section id="cierre">
