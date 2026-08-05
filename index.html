@@ -821,10 +821,12 @@
     .faq-body ul li { margin-bottom: .25rem; color: #5a6070; }
   </style>
 
-  <!-- FAQPage structured data -->
+  <!-- Structured data: FAQPage + LodgingBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@graph": [
+    {
     "@type": "FAQPage",
     "mainEntity": [
       {
@@ -865,14 +867,6 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Sí. De jueves a domingos y feriados el desayuno se sirve en el restaurante Gran Vadori de 9 a 11 hs, e incluye café expreso, té, tostadas de pan casero, mermelada artesanal, huevo revuelto, queso crema y jamón asado. El resto de los días se entrega un desayuno seco en la suite, con sobres de té, café, leche y masas secas."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuánto cuesta una noche en Villa Vadori Suites?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Valores de referencia en temporada baja para 2 adultos: 1 noche con desayuno desde $140.000 en cuartos en suite y $180.000 en suites independientes. 1 noche con desayuno más almuerzo o cena en Gran Vadori desde $220.000 y $260.000 respectivamente. 2 noches con desayuno y 2 almuerzos o cenas desde $360.000 y $430.000. Las tarifas varían según temporada y promociones vigentes; la disponibilidad actualizada se consulta por WhatsApp."
         }
       },
       {
@@ -922,27 +916,38 @@
           "@type": "Answer",
           "text": "El complejo está al inicio del camino al Observatorio Astronómico, un camino rural de bajo tránsito ideal para ciclismo y senderismo, y cuenta con un sendero natural sobre el arroyo apto para trekking. Está a 8 km del Autódromo Cabalén por camino interno, con estacionamiento cubierto disponible. También es base para grupos de motos y autos clásicos, retiros de meditación, mindfulness y bienestar, y capacitaciones o talleres corporativos para hasta 20 personas."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta una noche en Villa Vadori Suites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Valores de referencia en temporada baja, para 2 adultos: una noche con desayuno, desde $140.000 en cuartos en suite y $180.000 en suites independientes. Una noche con desayuno y un almuerzo o cena en Gran Vadori, desde $220.000 en cuartos en suite y $260.000 en suites independientes. Dos noches con desayuno y dos almuerzos o cenas, desde $360.000 en cuartos en suite y $430.000 en suites independientes. Las tarifas varían según temporada y promociones vigentes; consultá disponibilidad actualizada por WhatsApp."
+        }
       }
     ]
-  }
-  </script>
-
-  <!-- LodgingBusiness structured data -->
-  <script type="application/ld+json">
+  },
   {
-    "@context": "https://schema.org",
     "@type": "LodgingBusiness",
     "name": "Villa Vadori Suites",
     "description": "Complejo exclusivo para adultos en Falda del Carmen, Córdoba. 8 suites rodeadas de naturaleza serrana, gastronomía premiada y a solo 30 minutos de Córdoba Capital.",
+    "image": "https://villavadorisuites.ar/portada.jpg",
     "url": "https://villavadorisuites.ar",
     "telephone": "+5493516427600",
-    "priceRange": "$$$",
+    "priceRange": "$$",
     "currenciesAccepted": "ARS",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Ruta C45, km 15,2",
       "addressLocality": "Falda del Carmen",
       "addressRegion": "Córdoba",
+      "postalCode": "X5187AC",
       "addressCountry": "AR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-31.586603326232545",
+      "longitude": "-64.45868938702175"
     },
     "petsAllowed": false,
     "smokingAllowed": false,
@@ -955,12 +960,19 @@
       { "@type": "LocationFeatureSpecification", "name": "Aire acondicionado frío/calor", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Estacionamiento cubierto", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Asadores", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Fogón social", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Desayuno incluido", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Restaurante en el predio", "value": true }
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante en el predio", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Solo adultos (+15 años)", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Apto mascotas", "value": false }
     ],
     "sameAs": [
-      "https://instagram.com/villavadori.suites"
+      "https://www.instagram.com/villavadori.suites",
+      "https://www.google.com/maps/place/Villa+Vadori+suites/@-31.5866415,-64.4606271,17z/data=!3m1!4b1!4m9!3m8!1s0x942d5b0484fd137f:0x9f3f4a696f0f8f2f!5m2!4m1!1i2!8m2!3d-31.5866447!4d-64.4588397!16s%2Fg%2F11gnp701gm",
+      "https://www.booking.com/hotel/ar/villa-vadori-suites.html"
     ]
+  }
+  ]
   }
   </script>
 </head>
@@ -1354,6 +1366,82 @@
         <svg width="19" height="19" viewBox="0 0 24 24" ><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="currentColor"/></svg>
         @villavadori.suites
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="sec-header fade">
+      <h2>Preguntas frecuentes</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list fade">
+
+      <details class="faq-item">
+        <summary>¿Villa Vadori Suites es solo para adultos? <span class="faq-arrow">+</span></summary>
+        <div class="faq-body"><p>Sí, admitimos huéspedes mayores de 15 años. La capacidad máxima es de 16 huéspedes distribuidos en 8 unidades.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Dónde está ubicado? <span class="faq-arrow">+</span></summary>
+        <div class="faq-body"><p>En Falda del Carmen, Sierras de Córdoba, Argentina — a 30 minutos de Córdoba Capital, 20 minutos de Villa Carlos Paz y 40 minutos de Villa General Belgrano.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Qué tipos de unidades tienen? <span class="faq-arrow">+</span></summary>
+        <div class="faq-body"><p>4 cuartos en suite de 20 m² con terraza privada y vista al arroyo, y 4 suites independientes de 24 m² con mayor privacidad y autonomía. Todas cuentan con aire acondicionado frío/calor, WiFi, TV Smart 42" y limpieza diaria.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Cuánto cuesta una noche? <span class="faq-arrow">+</span></summary>
+        <div class="faq-body">
+          <p>Valores de referencia en temporada baja, para 2 adultos:</p>
+          <ul>
+            <li>1 noche con desayuno: desde $140.000 (cuartos en suite) / $180.000 (suites independientes)</li>
+            <li>1 noche con desayuno + almuerzo o cena en Gran Vadori: desde $220.000 / $260.000</li>
+            <li>2 noches con desayuno + 2 almuerzos o cenas: desde $360.000 / $430.000</li>
+          </ul>
+          <p>Las tarifas varían según temporada y promociones vigentes. Consultá disponibilidad actualizada por WhatsApp.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿A qué hora es el check-in y el check-out? <span class="faq-arrow">+</span></summary>
+        <div class="faq-body"><p>Check-in a partir de las 14:30 hs y check-out hasta las 10:30 hs. Los domingos, dentro de los packs de fin de semana, hay salida tardía disponible.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿El desayuno está incluido? <span class="faq-arrow">+</span></summary>
+        <div class="faq-body"><p>Sí. De jueves a domingos y feriados se sirve en Gran Vadori de 9 a 11 hs: café expreso, té, tostadas de pan casero, mermelada artesanal, huevo revuelto, queso crema y jamón asado. El resto de los días se entrega un desayuno seco en la suite.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Se puede comer en Gran Vadori durante la estadía? <span class="faq-arrow">+</span></summary>
+        <div class="faq-body"><p>Sí. Gran Vadori está a 80 metros de las unidades — restaurante de cocina criolla gourmet con 15 años de trayectoria premiada, abierto de jueves a domingo para el almuerzo y los sábados también para la cena.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Cómo se hacen las reservas? <span class="faq-arrow">+</span></summary>
+        <div class="faq-body"><p>Las reservas se gestionan exclusivamente por WhatsApp al <a href="https://wa.me/5493516427600" target="_blank" rel="noopener">+54 9 351 642-7600</a>.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Se admiten mascotas? <span class="faq-arrow">+</span></summary>
+        <div class="faq-body"><p>No, Villa Vadori Suites no admite mascotas.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Cómo es el servicio de limpieza? <span class="faq-arrow">+</span></summary>
+        <div class="faq-body"><p>Se realiza limpieza diaria en todas las unidades. Las sábanas se cambian en la cuarta noche de estadía, salvo que se solicite un cambio extra.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>¿Qué actividades hay cerca? <span class="faq-arrow">+</span></summary>
+        <div class="faq-body"><p>El complejo está al inicio del camino al Observatorio Astronómico, ideal para ciclismo y senderismo, y cuenta con un sendero sobre el arroyo para trekking. A 8 km del Autódromo Cabalén por camino interno. También recibe grupos de motos y autos clásicos, retiros de meditación y bienestar, y capacitaciones o talleres corporativos para hasta 20 personas.</p></div>
+      </details>
+
     </div>
   </div>
 </section>
