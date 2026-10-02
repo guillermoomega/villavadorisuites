@@ -63,7 +63,7 @@ Contenido tomado 1:1 de lo ya publicado en la web — no duplica texto visible, 
       "name": "¿Se puede comer en el restaurante Gran Vadori durante la estadía?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Gran Vadori, a 80 metros de las unidades, es un restaurante de cocina criolla gourmet con 15 años de trayectoria premiada, abierto de jueves a domingo para el almuerzo y los sábados también para la cena."
+        "text": "Sí. Gran Vadori, a 80 metros de las unidades, es un restaurante de cocina criolla gourmet con 15 años de trayectoria premiada, abierto de jueves a domingo para el almuerzo y los viernes y sábados también para la cena."
       }
     },
     {

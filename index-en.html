@@ -736,7 +736,6 @@
     .tarifas-row:nth-child(even) { background: #eee8db; }
     .tarifa-nombre { font-weight: 700; font-size: .95rem; color: var(--gris); margin-bottom: .25rem; }
     .tarifa-sub { font-size: .82rem; color: #6b7280; margin-bottom: 0; line-height: 1.4; }
-    .tarifa-dias { font-size: .72rem; color: var(--borravino-d); font-weight: 600; letter-spacing: .03em; margin-top: .3rem; margin-bottom: 0; }
     .tarifa-precio-cell {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.1rem, 2vw, 1.45rem);
@@ -897,7 +896,7 @@
         "name": "Can you dine at Gran Vadori during your stay?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Gran Vadori is 80 meters from the units. It is an award-winning gourmet criollo restaurant with 15 years of history, open Thursday to Sunday for lunch and Saturdays also for dinner."
+          "text": "Yes. Gran Vadori is 80 meters from the units. It is an award-winning gourmet criollo restaurant with 15 years of history, open Thursday to Sunday for lunch and Fridays and Saturdays also for dinner."
         }
       },
       {
@@ -1169,7 +1168,7 @@
         <p>Fifteen years of widely awarded gourmet criollo cuisine, right on the same property.</p>
         <p>Gran Vadori is not just the property's restaurant — it's the reason many visit us, and why everyone comes back.</p>
         <p>A kitchen that respects the flavors of the Córdoba countryside and elevates them with technique and passion.</p>
-        <p>Open Thursday to Sunday for lunch, and Saturday nights for dinner.</p>
+        <p>Open Thursday to Sunday for lunch, and Friday and Saturday nights for dinner.</p>
         
           <p><a href="https://granvadori.com.ar" target="_blank" rel="noopener">Learn more about Gran Vadori at granvadori.com.ar</a></p>
           <p>Also, just steps from Villa Vadori Suites you'll find other excellent dining options:</p>
@@ -1468,7 +1467,7 @@
 
       <details class="faq-item">
         <summary>Can you dine at Gran Vadori during your stay? <span class="faq-arrow">+</span></summary>
-        <div class="faq-body"><p>Yes. Gran Vadori is 80 meters from the units — an award-winning gourmet criollo restaurant with 15 years of history, open Thursday to Sunday for lunch and Saturdays also for dinner.</p></div>
+        <div class="faq-body"><p>Yes. Gran Vadori is 80 meters from the units — an award-winning gourmet criollo restaurant with 15 years of history, open Thursday to Sunday for lunch and Fridays and Saturdays also for dinner.</p></div>
       </details>
 
       <details class="faq-item">
@@ -1571,34 +1570,16 @@
 (function () {
   var tabla = document.querySelector('.tarifas-tabla');
 
-  var DIAS_ORDEN = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
-  var DIAS_ABREV = { Lunes: 'Lun', Martes: 'Mar', Miércoles: 'Mié', Jueves: 'Jue', Viernes: 'Vie', Sábado: 'Sáb', Domingo: 'Dom' };
-
-  function abreviarDias(dias) {
-    if (!dias || !dias.length) return '';
-    var ordenados = DIAS_ORDEN.filter(function (d) { return dias.indexOf(d) !== -1; });
-    if (!ordenados.length) return '';
-    if (ordenados.length === 7) return 'Todos los días';
-    var indices = ordenados.map(function (d) { return DIAS_ORDEN.indexOf(d); });
-    var esContiguo = indices.every(function (idx, i) { return i === 0 || idx === indices[i - 1] + 1; });
-    if (esContiguo && ordenados.length > 1) {
-      return DIAS_ABREV[ordenados[0]] + '-' + DIAS_ABREV[ordenados[ordenados.length - 1]];
-    }
-    return ordenados.map(function (d) { return DIAS_ABREV[d]; }).join(', ');
-  }
-
   fetch('https://n8ngv-n8n.snjbsa.easypanel.host/webhook/tarifas-vvs')
     .then(function (r) { return r.json(); })
     .then(function (data) {
       data.forEach(function (item) {
         var row = document.createElement('div');
         row.className = 'tarifas-row';
-        var diasTexto = abreviarDias(item.dias);
         row.innerHTML =
           '<div>' +
             '<p class="tarifa-nombre">' + item.pack + '</p>' +
             (item.descripcion ? '<p class="tarifa-sub">' + item.descripcion + '</p>' : '') +
-            (diasTexto ? '<p class="tarifa-dias">Validez: ' + diasTexto + '</p>' : '') +
           '</div>' +
           '<p class="tarifa-precio-cell">$' + Number(item.suite).toLocaleString('es-AR') + '</p>' +
           '<p class="tarifa-precio-cell">$' + Number(item.cuarto).toLocaleString('es-AR') + '</p>';

@@ -736,7 +736,6 @@
     .tarifas-row:nth-child(even) { background: #eee8db; }
     .tarifa-nombre { font-weight: 700; font-size: .95rem; color: var(--gris); margin-bottom: .25rem; }
     .tarifa-sub { font-size: .82rem; color: #6b7280; margin-bottom: 0; line-height: 1.4; }
-    .tarifa-dias { font-size: .72rem; color: var(--borravino-d); font-weight: 600; letter-spacing: .03em; margin-top: .3rem; margin-bottom: 0; }
     .tarifa-precio-cell {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.1rem, 2vw, 1.45rem);
@@ -1169,7 +1168,7 @@
         <p>Quince años de cocina criolla gourmet, ampliamente premiada, en el mismo predio. </p>
         <p>Gran Vadori no es el restaurante del complejo, es la razón por la que muchos nos visitan y por la que todos vuelven.</p>
         <p>Una cocina que respeta los sabores de la tierra cordobesa y los eleva con técnica y pasión. </p>
-        <p> Abierto de jueves a domingo para el almuerzo, y los sábados a la noche para cena.</p>
+        <p> Abierto de jueves a domingo para el almuerzo, y los viernes y sábados a la noche para cena.</p>
         
           <p><a href="https://granvadori.com.ar" target="_blank" rel="noopener">Conocé mas sobre Gran vadori en granvadori.com.ar</a></p>
           <p>Además, a metros de villa Vadori suites encontraras otras muy buenas opciones gastronómicas : </p>
@@ -1468,7 +1467,7 @@
 
       <details class="faq-item">
         <summary>¿Se puede comer en Gran Vadori durante la estadía? <span class="faq-arrow">+</span></summary>
-        <div class="faq-body"><p>Sí. Gran Vadori está a 80 metros de las unidades — restaurante de cocina criolla gourmet con 15 años de trayectoria premiada, abierto de jueves a domingo para el almuerzo y los sábados también para la cena.</p></div>
+        <div class="faq-body"><p>Sí. Gran Vadori está a 80 metros de las unidades — restaurante de cocina criolla gourmet con 15 años de trayectoria premiada, abierto de jueves a domingo para el almuerzo y los viernes y sábados también para la cena.</p></div>
       </details>
 
       <details class="faq-item">
@@ -1571,34 +1570,16 @@
 (function () {
   var tabla = document.querySelector('.tarifas-tabla');
 
-  var DIAS_ORDEN = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
-  var DIAS_ABREV = { Lunes: 'Lun', Martes: 'Mar', Miércoles: 'Mié', Jueves: 'Jue', Viernes: 'Vie', Sábado: 'Sáb', Domingo: 'Dom' };
-
-  function abreviarDias(dias) {
-    if (!dias || !dias.length) return '';
-    var ordenados = DIAS_ORDEN.filter(function (d) { return dias.indexOf(d) !== -1; });
-    if (!ordenados.length) return '';
-    if (ordenados.length === 7) return 'Todos los días';
-    var indices = ordenados.map(function (d) { return DIAS_ORDEN.indexOf(d); });
-    var esContiguo = indices.every(function (idx, i) { return i === 0 || idx === indices[i - 1] + 1; });
-    if (esContiguo && ordenados.length > 1) {
-      return DIAS_ABREV[ordenados[0]] + '-' + DIAS_ABREV[ordenados[ordenados.length - 1]];
-    }
-    return ordenados.map(function (d) { return DIAS_ABREV[d]; }).join(', ');
-  }
-
   fetch('https://n8ngv-n8n.snjbsa.easypanel.host/webhook/tarifas-vvs')
     .then(function (r) { return r.json(); })
     .then(function (data) {
       data.forEach(function (item) {
         var row = document.createElement('div');
         row.className = 'tarifas-row';
-        var diasTexto = abreviarDias(item.dias);
         row.innerHTML =
           '<div>' +
             '<p class="tarifa-nombre">' + item.pack + '</p>' +
             (item.descripcion ? '<p class="tarifa-sub">' + item.descripcion + '</p>' : '') +
-            (diasTexto ? '<p class="tarifa-dias">Validez: ' + diasTexto + '</p>' : '') +
           '</div>' +
           '<p class="tarifa-precio-cell">$' + Number(item.suite).toLocaleString('es-AR') + '</p>' +
           '<p class="tarifa-precio-cell">$' + Number(item.cuarto).toLocaleString('es-AR') + '</p>';
