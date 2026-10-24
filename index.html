@@ -1314,7 +1314,7 @@
     <div class="sec-header fade">
       <h2>Tarifas</h2>
       <div class="divider"></div>
-      <p>Precios por unidad para 2 adultos en temporada baja.</p>
+      <p id="tarifas-temporada">Precios por unidad para 2 adultos en temporada baja.</p>
       <p>Para precios de fechas específicas consultanos por WhatsApp.</p>
       <p>Los menus incluidos en las estadías tienen un 20% de dto. respecto de la carta del restaurante.</p>
     </div>
@@ -1574,6 +1574,9 @@
   fetch('https://n8ngv-n8n.snjbsa.easypanel.host/webhook/tarifas-vvs')
     .then(function (r) { return r.json(); })
     .then(function (data) {
+      var tt = document.getElementById('tarifas-temporada');
+      var t = data[0] && data[0].temporada_hoy;
+      if (tt && t) tt.textContent = 'Precios por unidad para 2 adultos en temporada ' + t + '.';
       data.forEach(function (item) {
         var row = document.createElement('div');
         row.className = 'tarifas-row';

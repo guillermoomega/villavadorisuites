@@ -1314,7 +1314,7 @@
     <div class="sec-header fade">
       <h2>Rates</h2>
       <div class="divider"></div>
-      <p>Prices per unit for 2 adults in low season.</p>
+      <p id="tarifas-temporada">Prices per unit for 2 adults in low season.</p>
       <p>For prices on specific dates, contact us via WhatsApp.</p>
       <p>Menus included in stays have a 20% discount compared to the restaurant menu.</p>
     </div>
@@ -1574,6 +1574,10 @@
   fetch('https://n8ngv-n8n.snjbsa.easypanel.host/webhook/tarifas-vvs')
     .then(function (r) { return r.json(); })
     .then(function (data) {
+      var tt = document.getElementById('tarifas-temporada');
+      var t = data[0] && data[0].temporada_hoy;
+      var en = { baja: 'low', media: 'mid', alta: 'high' }[t];
+      if (tt && en) tt.textContent = 'Prices per unit for 2 adults in ' + en + ' season.';
       data.forEach(function (item) {
         var row = document.createElement('div');
         row.className = 'tarifas-row';
